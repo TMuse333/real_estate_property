@@ -58,7 +58,7 @@ const ImageSlider = ({ images }) => {
             alt={alt}
             aria-hidden={imageIndex !== index}
             className="img-slider-img"
-            style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50px" : "500px",
+            style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50%" : "50%",
             // position:'absolute',
             // top:'25%',
             // left:'50%',

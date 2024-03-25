@@ -32,8 +32,8 @@ const ImageSlider = ({ images }) => {
     <section
       aria-label="Image Slider"
       style={{ width: "100%",
-       height: isFullHeight ? "10%" : '10%', position: "relative",
-    //    backgroundColor: isFullHeight ? 'black' : 'transparent'
+       height: isFullHeight ? "100%" : '500px', position: "relative",
+       backgroundColor: isFullHeight ? 'black' : 'transparent'
  }}
     >
       <a href="#after-image-slider-controls" className="skip-link">
@@ -45,10 +45,10 @@ const ImageSlider = ({ images }) => {
           height: "100%",
           display: "flex",
           overflow: "hidden",
-        //   position:isFullHeight ? 'fixed' : 'relative',
-        //   top:'0',
-        //   left:'50%',
-        //   transform: isFullHeight ? 'translateX(-50%)' : 'auto'
+          position:isFullHeight ? 'fixed' : 'relative',
+          top:'0',
+          left:'50%',
+          transform: isFullHeight ? 'translateX(-50%)' : 'auto'
         }}
       >
         {images.map(({ url, alt }, index) => (
@@ -58,11 +58,11 @@ const ImageSlider = ({ images }) => {
             alt={alt}
             aria-hidden={imageIndex !== index}
             className="img-slider-img"
-            style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50px" : "500px",
-            // position:'absolute',
-            // top:'25%',
-            // left:'50%',
-            // transform:'translateX(-50%)'
+            style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50%" : "100%",
+            position:'absolute',
+            top:'25%',
+            left:'50%',
+            transform:'translateX(-50%)'
         }}
           />
         ))}

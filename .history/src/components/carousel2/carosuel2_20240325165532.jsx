@@ -32,7 +32,7 @@ const ImageSlider = ({ images }) => {
     <section
       aria-label="Image Slider"
       style={{ width: "100%",
-       height: isFullHeight ? "10%" : '10%', position: "relative",
+       height: isFullHeight ? "80%" : '100%', position: "relative",
     //    backgroundColor: isFullHeight ? 'black' : 'transparent'
  }}
     >
@@ -58,7 +58,7 @@ const ImageSlider = ({ images }) => {
             alt={alt}
             aria-hidden={imageIndex !== index}
             className="img-slider-img"
-            style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50px" : "500px",
+            style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50%" : "50%",
             // position:'absolute',
             // top:'25%',
             // left:'50%',
