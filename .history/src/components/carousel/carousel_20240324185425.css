@@ -1,0 +1,6 @@
+.carousel-container {
+    max-width: 900px !important;
+    margin: 0 auto;
+    height:80vh;
+    object-fit: contai;
+}

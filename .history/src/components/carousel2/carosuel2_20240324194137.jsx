@@ -1,0 +1,3 @@
+import kakashi from '../../media/kakashi_susanoo.jpg';
+import sasuke from '../../media/sasuke.jpg';
+import vegeta from '../../media/majin-vegeta.png';
