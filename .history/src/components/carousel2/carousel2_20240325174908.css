@@ -7,7 +7,7 @@
 .img-slider-img {
   object-fit: cover;
   width: 100%;
-object-position: 50% 50%;
+  height: 10%;
   display: block;
   flex-shrink: 0;
   flex-grow: 0;
@@ -110,19 +110,14 @@ object-position: 50% 50%;
   }
 } */
 
-.images-grid {
+.images-grid{
     display: grid;
-    width: 95vw;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Modify this line */
+    width:100vw;
+    grid-template-columns: 20vw200px;
     justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap:2rem;
 }
 
-.images-grid img {
-    width: 100%;
-    height:40vw;
-    object-fit: cover;
-    max-height: 400px;
+.images-grid img{
+    width:100%;
 }

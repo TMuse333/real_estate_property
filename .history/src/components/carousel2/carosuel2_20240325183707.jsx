@@ -104,7 +104,6 @@ const handleUnexpand = () => {
             height: "100%",
             display: "flex",
             overflow: "hidden",
-            alignItems:'center'
          
           }}
         >

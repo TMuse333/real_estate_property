@@ -87,11 +87,7 @@ const handleUnexpand = () => {
         <section
         aria-label="Image Slider"
         style={{ width: "100%",
-         position:  desktopExpanded ? 'fixed' :"relative",
-         backgroundColor:'black',
-         height: desktopExpanded ? '100vh' : 'auto',
-         top: desktopExpanded ?'0': 'auto',
-         left:desktopExpanded ?'0': 'auto'
+         position: "relative",
   
    }}
       >
@@ -104,7 +100,6 @@ const handleUnexpand = () => {
             height: "100%",
             display: "flex",
             overflow: "hidden",
-            alignItems:'center'
          
           }}
         >
@@ -116,8 +111,8 @@ const handleUnexpand = () => {
               aria-hidden={imageIndex !== index}
               className="img-slider-img"
               style={{ transform: `translateX(${-100 * imageIndex}%)`, 
-              height: isFullHeight ? "50px" : "500px",
-              
+            //   height: isFullHeight ? "50px" : "500px",
+            //   width:'25vw'
              
           }}
             />
@@ -172,9 +167,7 @@ const handleUnexpand = () => {
           position:'absolute',
           top:isFullHeight ? '100%' : '100%',
           left:'50%',
-          transform:'translateX(-50%)',
-          zIndex:'5',
-          color:'red'
+          transform:'translateX(-50%)'
         }}>
   
           {isFullHeight ? "Collapse" : "Expand"}

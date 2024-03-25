@@ -14,7 +14,6 @@ const ImageSlider = ({ images }) => {
 
   const [itemClicked, setItemClicked] = useState(null)
 
-    const [desktopExpanded, setDesktopExpanded] = useState(false)
 
   const handleItemClick = (index) => {
 
@@ -23,9 +22,8 @@ const ImageSlider = ({ images }) => {
     // if(itemClicked !== null){
         setItemClicked(index)
         setImageIndex(index)
-        setDesktopExpanded(true)
        
-    // }
+    }
     // else{
     //     setItemClicked(null)
     // }
@@ -69,29 +67,19 @@ const ImageSlider = ({ images }) => {
     });
   };
 
-//   const toggleImageHeight = () => {
-//     setIsFullHeight(prevState => !prevState);
-
-    
-//   };
-
-const handleUnexpand = () => {
-    setDesktopExpanded(false)
-}
+  const toggleImageHeight = () => {
+    setIsFullHeight(prevState => !prevState);
+  };
 
   return (
     <>
 
 
-    {!isDesktop  || (itemClicked !== null && desktopExpanded) ? (
+    {!isDesktop  || itemClicked !== null ? (
         <section
         aria-label="Image Slider"
         style={{ width: "100%",
-         position:  desktopExpanded ? 'fixed' :"relative",
-         backgroundColor:'black',
-         height: desktopExpanded ? '100vh' : 'auto',
-         top: desktopExpanded ?'0': 'auto',
-         left:desktopExpanded ?'0': 'auto'
+         height: isFullHeight ? "10%" : '10%', position: "relative",
   
    }}
       >
@@ -104,7 +92,6 @@ const handleUnexpand = () => {
             height: "100%",
             display: "flex",
             overflow: "hidden",
-            alignItems:'center'
          
           }}
         >
@@ -115,9 +102,7 @@ const handleUnexpand = () => {
               alt={alt}
               aria-hidden={imageIndex !== index}
               className="img-slider-img"
-              style={{ transform: `translateX(${-100 * imageIndex}%)`, 
-              height: isFullHeight ? "50px" : "500px",
-              
+              style={{ transform: `translateX(${-100 * imageIndex}%)`, height: isFullHeight ? "50px" : "500px",
              
           }}
             />
@@ -167,14 +152,12 @@ const handleUnexpand = () => {
           ))}
         </div>
         <div id="after-image-slider-controls" />
-        <button onClick={handleUnexpand} className="toggle-height-btn"
+        <button onClick={toggleImageHeight} className="toggle-height-btn"
         style={{
           position:'absolute',
           top:isFullHeight ? '100%' : '100%',
           left:'50%',
-          transform:'translateX(-50%)',
-          zIndex:'5',
-          color:'red'
+          transform:'translateX(-50%)'
         }}>
   
           {isFullHeight ? "Collapse" : "Expand"}

@@ -104,7 +104,6 @@ const handleUnexpand = () => {
             height: "100%",
             display: "flex",
             overflow: "hidden",
-            alignItems:'center'
          
           }}
         >
@@ -172,9 +171,7 @@ const handleUnexpand = () => {
           position:'absolute',
           top:isFullHeight ? '100%' : '100%',
           left:'50%',
-          transform:'translateX(-50%)',
-          zIndex:'5',
-          color:'red'
+          transform:'translateX(-50%)'
         }}>
   
           {isFullHeight ? "Collapse" : "Expand"}

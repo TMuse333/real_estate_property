@@ -88,7 +88,7 @@ const handleUnexpand = () => {
         aria-label="Image Slider"
         style={{ width: "100%",
          position:  desktopExpanded ? 'fixed' :"relative",
-         backgroundColor:'black',
+        //  backgroundColor:'black',
          height: desktopExpanded ? '100vh' : 'auto',
          top: desktopExpanded ?'0': 'auto',
          left:desktopExpanded ?'0': 'auto'
@@ -104,7 +104,6 @@ const handleUnexpand = () => {
             height: "100%",
             display: "flex",
             overflow: "hidden",
-            alignItems:'center'
          
           }}
         >

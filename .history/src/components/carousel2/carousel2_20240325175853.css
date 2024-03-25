@@ -7,7 +7,7 @@
 .img-slider-img {
   object-fit: cover;
   width: 100%;
-object-position: 50% 50%;
+  height: 10%;
   display: block;
   flex-shrink: 0;
   flex-grow: 0;
@@ -116,7 +116,7 @@ object-position: 50% 50%;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Modify this line */
     justify-content: center;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 

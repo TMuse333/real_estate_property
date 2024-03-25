@@ -86,12 +86,9 @@ const handleUnexpand = () => {
     {!isDesktop  || (itemClicked !== null && desktopExpanded) ? (
         <section
         aria-label="Image Slider"
-        style={{ width: "100%",
-         position:  desktopExpanded ? 'fixed' :"relative",
-         backgroundColor:'black',
-         height: desktopExpanded ? '100vh' : 'auto',
-         top: desktopExpanded ?'0': 'auto',
-         left:desktopExpanded ?'0': 'auto'
+        style={{ width: !desktopExpanded ? "100%",
+         position: "relative",
+         backgroundColor:'black'
   
    }}
       >
@@ -104,7 +101,6 @@ const handleUnexpand = () => {
             height: "100%",
             display: "flex",
             overflow: "hidden",
-            alignItems:'center'
          
           }}
         >
@@ -172,9 +168,7 @@ const handleUnexpand = () => {
           position:'absolute',
           top:isFullHeight ? '100%' : '100%',
           left:'50%',
-          transform:'translateX(-50%)',
-          zIndex:'5',
-          color:'red'
+          transform:'translateX(-50%)'
         }}>
   
           {isFullHeight ? "Collapse" : "Expand"}

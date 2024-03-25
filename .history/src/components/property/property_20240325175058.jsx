@@ -23,18 +23,6 @@ const Property = ({heroImage,price,
     url:vegeta,
     alt:'Vegeta'
    },
-   {
-    url:kakashi,
-    alt:'Kakashi'
-  }
- ,{
-  url:sasuke,
-  alt:'Sasuke'
- },
- {
-  url:vegeta,
-  alt:'Vegeta'
- },
     
   ]
     return (
