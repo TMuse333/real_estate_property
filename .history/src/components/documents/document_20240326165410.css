@@ -1,0 +1,11 @@
+.documents-grid{
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    width:100vw;
+    margin:1rem auto;
+
+}
+
+.documents-grid img{
+    width:20vw;
+}

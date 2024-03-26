@@ -1,0 +1,49 @@
+import React from "react";
+import img from '../../media/place-holder.jpg';
+import './document.css'
+
+const Documents = () => {
+
+    const documents = [
+        {
+            name:'Document 1',
+            image:img,
+            url:''
+        },
+        {
+            name:'Document 1',
+            image:img,
+            url:''
+        },
+        {
+            name:'Document 1',
+            image:img,
+            url:''
+        },
+        {
+            name:'Document 1',
+            image:img,
+            url:''
+        }
+    ]
+
+    return (
+        <section className="documents">
+            <h1>Documents</h1>
+            <p>Here are some documents you will
+                need for your dream home.
+            </p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?
+            <div className="documents-grid">
+                {documents.map((document, index) => (
+                    <div className="document">
+                        <img src={document.image}/>
+                        <p>{document.name}</p>
+                        </div>
+                ))}
+            </div>
+        </section>
+    )
+}
+
+export default Documents

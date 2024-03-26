@@ -9,7 +9,6 @@ import vegeta from '../../media/majin-vegeta.png';
 
 import './property.css'
 import ProductCarousel from "../productCarousel/productCarousel";
-import Documents from "../documents/documents";
 
 const Property = ({heroImage,price,
     mainDescription,openingDate,closingDate}) => {
@@ -103,7 +102,7 @@ const Property = ({heroImage,price,
 <ProductCarousel
 horizontal={true}/>
 
-<Documents/>
+<Doc
 
         </section>
     )

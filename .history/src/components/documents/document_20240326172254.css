@@ -1,0 +1,29 @@
+.documents-grid {
+    display: grid;
+    width: 100vw;
+    margin: 3rem auto;
+    justify-content: center;
+    grid-template-columns: 30%  /* Adjust the min and max widths as needed */
+    gap: 1rem; /* Adjust the gap between columns as needed */
+    /* background-color: red; */
+    /* max-width: 1000px; */
+}
+
+
+.documents-grid img{
+    width:20vw;
+    /* height:30vw; */
+    object-fit: cover;
+    max-width: 163px;
+    max-height: 244px;
+}
+
+.document{
+    transition: 0.3s ease-in;
+    padding:0;
+    /* background-color: red; */
+    /* width:min-content; */
+    margin: 0 auto;
+    height:min-content;
+    margin-bottom: 1rem;;
+}

@@ -10,24 +10,13 @@
 }
 
 .documents-container{
-    background-color: rgb(18, 5, 5);
-    position: relative;
-}
-
-.document-details{
-    width:20vw;
-    position: absolute;
-    left:50%;
-    transform: translateX(-50%);
-    background-color: rgb(43, 51, 57);
-    transition: 0.3s ease-in;
-
+    background-color: ;
 }
 
 
 .documents-grid img{
     width:20vw;
-    height:30vw;
+    /* height:30vw; */
     object-fit: cover;
     max-width: 200px;
     /* max-height: 244px; */

@@ -66,16 +66,14 @@ const Documents = () => {
         const selected = hoveredDoc !== null
 
         const initialTopOffset = 20; // Adjust the initial offset as needed
-const top = hoveredDoc === 0 ? initialTopOffset : Math.floor(hoveredDoc / 2) * 60 ;
-
-console.log('the top value', Math.floor(hoveredDoc / 2) * 30 + 30)
+const top = hoveredDoc === 0 ? initialTopOffset : Math.floor(hoveredDoc / 2) * 30;
 
 
 
         return {
             opacity: selected ? '1' : '0',
             top:
-            `${top}vh`
+            `${top}%`
             
         }
     }

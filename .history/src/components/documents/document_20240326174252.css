@@ -21,7 +21,7 @@
     transform: translateX(-50%);
     background-color: rgb(43, 51, 57);
     transition: 0.3s ease-in;
-
+    top:10%;
 }
 
 

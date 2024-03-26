@@ -28,19 +28,7 @@ const Documents = () => {
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
-        },
-        {
-            name:'Document 1',
-            image:img,
-            url:'',
-            description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
-        },
-        {
-            name:'Document 1',
-            image:img,
-            url:'',
-            description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
-        },
+        }
     ]
 
     const [hoveredDoc, setHoveredDoc] = useState(null)
@@ -65,17 +53,12 @@ const Documents = () => {
     const detailsStyle = () => {
         const selected = hoveredDoc !== null
 
-        const initialTopOffset = 20; // Adjust the initial offset as needed
-const top = hoveredDoc === 0 ? initialTopOffset : Math.floor(hoveredDoc / 2) * 60 ;
-
-console.log('the top value', Math.floor(hoveredDoc / 2) * 30 + 30)
-
-
+        const top =1+ (hoveredDoc %2) * 50
 
         return {
             opacity: selected ? '1' : '0',
             top:
-            `${top}vh`
+            `${top}%`
             
         }
     }
