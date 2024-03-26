@@ -1,0 +1,31 @@
+.property-images-grid img, .property-video{
+    width:90vw;
+    object-fit: cover;
+    margin:0 auto;
+}
+
+.property-images-grid{
+    width: 100vw;
+}
+
+.property-video {
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width:655px){
+
+    .property-images-grid img{
+        width:40vw;
+        max-width: 330px;
+
+    }
+    .property-images-grid{
+        display: grid;
+        grid-template-columns: 40vw 40vw;
+        justify-content: space-around;
+        gap:2rem;
+        background-color: red;
+        margin: 0 auto;
+
+    }
+}

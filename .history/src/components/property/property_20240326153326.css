@@ -1,0 +1,14 @@
+.property-images-grid img, .property-video{
+    width:90vw;
+    object-fit: cover;
+    margin:0 auto;
+}
+
+.property-images-grid{
+    width: 100vw;
+}
+
+.property-video {
+    margin-bottom: 3rem;
+}
+

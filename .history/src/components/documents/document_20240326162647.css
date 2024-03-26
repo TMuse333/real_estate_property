@@ -1,0 +1,8 @@
+.documents-grid{
+    display: grid;
+
+}
+
+.documents-grid img{
+    width:20vw
+}
