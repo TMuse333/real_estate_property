@@ -44,12 +44,12 @@
     /* background-color: red; */
     /* width:min-content; */
     margin: 0 auto;
-    
+    height:min-content;
     margin-bottom: 1rem;;
     /* display: flex; */
-  
+    width:40vw;
     /* background-color: red; */
-  
+    justify-content: space-between;
     /* flex-direction: row-reverse; */
 
 }

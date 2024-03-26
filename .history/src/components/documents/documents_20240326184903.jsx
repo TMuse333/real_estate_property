@@ -36,7 +36,7 @@ const Documents = () => {
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 6',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'

@@ -47,9 +47,9 @@
     
     margin-bottom: 1rem;;
     /* display: flex; */
-  
+    width:40vw;
     /* background-color: red; */
-  
+    justify-content: space-between;
     /* flex-direction: row-reverse; */
 
 }

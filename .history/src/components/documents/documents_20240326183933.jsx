@@ -12,31 +12,31 @@ const Documents = () => {
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 2',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 3',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 4',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 5',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 6',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
@@ -63,7 +63,7 @@ const Documents = () => {
     }
 
     const detailsStyle = (index) => {
-        const selected = hoveredDoc === index
+        const selected = hoveredDoc !== null
 
         const initialTopOffset = 20; // Adjust the initial offset as needed
         const isEven = hoveredDoc % 2 === 0;
@@ -107,11 +107,11 @@ console.log('top',top)
                         <img src={document.image}/>
                         <p>{document.name}</p>
                         </div>
-                        {/* <div className="document-details"
-            style={detailsStyle(index)}>
+                        <div className="document-details"
+            style={detailsStyle()}>
                 <h2>Le Document</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, harum. Omnis autem aspernatur magnam error sit neque itaque velit laboriosam.</p>
-            </div> */}
+            </div>
                         </div>
                 ))}
             </div>

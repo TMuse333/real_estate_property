@@ -12,31 +12,31 @@ const Documents = () => {
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 2',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 3',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 4',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 5',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'
         },
         {
-            name:'Document 6',
+            name:'Document 1',
             image:img,
             url:'',
             description:'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, repellendus mollitia minima quibusdam voluptates ullam accusamus nostrum repellat maxime sequi?'

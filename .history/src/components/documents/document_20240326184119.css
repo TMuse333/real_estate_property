@@ -44,12 +44,9 @@
     /* background-color: red; */
     /* width:min-content; */
     margin: 0 auto;
-    
+    height:min-content;
     margin-bottom: 1rem;;
-    /* display: flex; */
-  
-    /* background-color: red; */
-  
-    /* flex-direction: row-reverse; */
+    display: flex;
+    flex-direction: row-reverse;
 
 }

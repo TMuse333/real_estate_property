@@ -10,7 +10,6 @@ import vegeta from '../../media/majin-vegeta.png';
 import './property.css'
 import ProductCarousel from "../productCarousel/productCarousel";
 import Documents from "../documents/documents";
-import GoogleMaps from "../maps/googleMaps";
 
 const Property = ({heroImage,price,
     mainDescription,openingDate,closingDate}) => {
@@ -106,7 +105,7 @@ horizontal={true}/>
 
 <Documents/>
 
-<GoogleMaps/>
+<GoogleMaps
 
         </section>
     )
