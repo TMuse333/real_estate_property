@@ -1,0 +1,9 @@
+.images-grid img, .prp{
+    width:90vw;
+    object-fit: cover;
+    margin:0 auto;
+}
+
+.images-grid{
+    width: 100vw;
+}

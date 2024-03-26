@@ -1,0 +1,23 @@
+.feature img{
+    width:20vw;
+}
+
+.features-grid{
+    width:100vw;
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    justify-content: space-evenly;
+}
+
+.amenity{
+    display: flex;
+    background-color: blue;
+    border:2px solid white;
+}
+
+.amenities-box{
+
+    display: grid;
+    grid-template-columns: 25vw 25vw;
+}
+

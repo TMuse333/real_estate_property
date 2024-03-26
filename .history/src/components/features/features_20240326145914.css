@@ -1,0 +1,16 @@
+.feature img{
+    width:20vw;
+}
+
+.features-grid, .amenities-box{
+    width:100vw;
+    display: grid;
+    grid-template-columns: 20vw 20vw;
+    justify-content: space-evenly;
+}
+
+.amenity{
+    display: flex;
+    background-color: ;
+}
+

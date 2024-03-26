@@ -1,0 +1,8 @@
+.feature img{
+    width:15vw;
+}
+
+.features-grid{
+    display: grid;
+    grid-template-columns: ;
+}

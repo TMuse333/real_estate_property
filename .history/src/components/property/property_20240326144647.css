@@ -1,0 +1,4 @@
+.images-grid img{
+    width:90vw;
+    object-fit: cover;
+}
