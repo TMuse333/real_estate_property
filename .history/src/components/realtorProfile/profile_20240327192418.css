@@ -1,0 +1,26 @@
+.profile-image{
+    height:40vh;
+    background-color: grey;
+   border-radius: 1rem;
+}
+
+.profile-container{
+    margin-top: 3rem;
+}
+
+.profile-socials img{
+    width:50px;
+    margin-right: 1rem;
+  
+}
+
+.profile-socials{
+    width:80vw;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.profile-desktop{
+    display: grid;
+    grid-template-columns: 40vw 40vw 20vw;
+}
