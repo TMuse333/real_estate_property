@@ -1,0 +1,38 @@
+.navbar-container{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    background-color: rgb(61, 61, 61);
+    display: flex;
+    justify-content: space-between;
+    height:
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    /* margin-top: 1rem;
+    margin-right: 0.5rem; */
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 2px 0;
+    transition: 0.4s;
+  }
+  
+  .menu-open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .menu-open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }

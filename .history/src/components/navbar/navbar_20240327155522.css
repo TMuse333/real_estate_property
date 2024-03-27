@@ -1,0 +1,9 @@
+.navbar-container{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    background-color: rgb(61, 61, 61);
+    display: flex;
+    justify-content: s;
+}
