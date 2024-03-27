@@ -1,0 +1,13 @@
+.profile-image{
+    height:40vh;
+    background-color: grey;
+   border-radius: 1rem;
+}
+
+.profile-container{
+    margin-top: 3rem;
+}
+
+.profile-socials img{
+    width:50px
+}

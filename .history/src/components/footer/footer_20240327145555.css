@@ -1,0 +1,8 @@
+.footer-container {
+    width:100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40vw, 50px)); /* Adjust the min and max widths as needed */
+    gap: 1rem; /* Adjust the gap between columns as needed */
+    margin:0 auto;
+  }
+  
