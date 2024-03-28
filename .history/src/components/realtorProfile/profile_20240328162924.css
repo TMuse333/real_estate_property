@@ -11,7 +11,7 @@
 
 .profile-socials img{
     width:35px;
-    margin-right: 1rem;
+    /* margin-right: 1rem; */
   
 }
 
@@ -45,7 +45,6 @@
         /* justify-content: flex-end; */
         /* background-color: red; */
         /* margin-left: auto; */
-        justify-content: flex-end;
 width:auto;
 max-width: auto;
 margin-right: 2rem;
@@ -62,9 +61,5 @@ margin-right: 2rem;
         left:50%;
         transform:translateX(-50%);
         top:0%;
-    }
-
-    .profile-contacts{
-        margin-right: 2rem;
     }
 }

@@ -34,10 +34,9 @@
 
 .property-hero{
     width:100vw;
-    /* max-height: 800px; */
-    /* height:80vh; */
+    max-height: 800px;
     object-fit: cover;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     margin: 0 auto;
 }
 

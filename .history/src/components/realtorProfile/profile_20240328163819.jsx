@@ -99,9 +99,9 @@ useEffect(()=> {
     if(tiltAngle <=10){
         setTiltFinished(true)
     }
-    // else{
-    //     setTiltFinished(false)
-    // }
+    else{
+        setTiltFinished(false)
+    }
 },[tiltAngle])
     
 

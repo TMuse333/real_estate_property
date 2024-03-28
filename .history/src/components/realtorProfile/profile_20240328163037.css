@@ -48,7 +48,7 @@
         justify-content: flex-end;
 width:auto;
 max-width: auto;
-margin-right: 2rem;
+margin-right: 3rem;
 
 
     }
@@ -62,9 +62,5 @@ margin-right: 2rem;
         left:50%;
         transform:translateX(-50%);
         top:0%;
-    }
-
-    .profile-contacts{
-        margin-right: 2rem;
     }
 }

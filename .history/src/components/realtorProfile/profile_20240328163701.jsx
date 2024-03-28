@@ -99,9 +99,9 @@ useEffect(()=> {
     if(tiltAngle <=10){
         setTiltFinished(true)
     }
-    // else{
-    //     setTiltFinished(false)
-    // }
+    else{
+        setTiltFinished(false)
+    }
 },[tiltAngle])
     
 
@@ -185,7 +185,7 @@ useEffect(()=> {
             animate:{
                 opacity:1,
                 transition:{
-                    delay:1.5 + delay
+                    delay:2 + delay
                 },
                 y:0
             }
@@ -297,7 +297,7 @@ useEffect(()=> {
                 {socials.map((social, index) => (
                     <motion.img
                     initial={socialVariants((index * 0.5)).initial}
-                    animate={tiltFinished ?socialVariants((index * 0.25)).animate : null }
+                    animate={}
                      src={social.image} key={index} />
                 ))}
             </div>

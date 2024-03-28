@@ -14,7 +14,7 @@ const Navbar = () => {
         { name: 'photo gallery', id: 'photo-gallery' },
         { name: 'video', id: 'video' },
         { name: 'more info', id: 'more-info' },
-        // { name: 'flyers', id: 'flyers' },
+        { name: 'flyers', id: 'flyers' },
         { name: 'area info', id: 'area-info' },
         { name: 'documents', id: 'documents' },
         { name: 'map', id: 'map' },

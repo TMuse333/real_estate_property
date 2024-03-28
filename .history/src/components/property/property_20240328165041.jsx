@@ -16,7 +16,6 @@ import Profile from "../realtorProfile/profile";
 import Footer from "../footer/footer";
 import Navbar from "../navbar/navbar";
 import HydroList from "../hydrolist/hydrolist";
-import { hydroText } from "../../data/data";
 
 
 
@@ -128,9 +127,7 @@ horizontal={true}/>
 
 <GoogleMaps/>
 
-<HydroList
-// absolute={true}
-text={hydroText}/>
+<HydroList/>
 
 <Profile
 id='profile'/>

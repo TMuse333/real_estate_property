@@ -4,8 +4,7 @@ import tom from '../../media/tom-header.png'
 import './profile.css'
 import img from '../../media/place-holder.jpg'
 import insta from '../../media/instagram-logo.svg.png'
-import facebook from '../../media/facebook.jpeg'
-import x from '../../media/x-logo.png'
+import facebook from 'src/media/facebook.jpeg'
 import { motion } from "framer-motion";
 
 const Profile = ({id}) => {
@@ -99,9 +98,9 @@ useEffect(()=> {
     if(tiltAngle <=10){
         setTiltFinished(true)
     }
-    // else{
-    //     setTiltFinished(false)
-    // }
+    else{
+        setTiltFinished(false)
+    }
 },[tiltAngle])
     
 
@@ -109,20 +108,20 @@ useEffect(()=> {
 
     const socials = [
         {
-            image: insta
+            image: img
         },
         {
-            image: facebook
+            image: img
         },
         {
-            image: x
+            image: img
         },
-        // {
-        //     image: img
-        // },
-        // {
-        //     image: img
-        // },
+        {
+            image: img
+        },
+        {
+            image: img
+        },
     ];
 
     const variants = {
@@ -169,26 +168,6 @@ useEffect(()=> {
                 duration:0.8
             }
            }
-        }
-
-    }
-
-    const socialVariants = (delay) => {
-
-        return {
-
-        
-        initial:{
-            opacity:0,
-            y:10
-        },
-            animate:{
-                opacity:1,
-                transition:{
-                    delay:1.5 + delay
-                },
-                y:0
-            }
         }
 
     }
@@ -295,10 +274,7 @@ useEffect(()=> {
                <div className="profile-socials">
                 
                 {socials.map((social, index) => (
-                    <motion.img
-                    initial={socialVariants((index * 0.5)).initial}
-                    animate={tiltFinished ?socialVariants((index * 0.25)).animate : null }
-                     src={social.image} key={index} />
+                    <img src={social.image} key={index} />
                 ))}
             </div>
             </div>

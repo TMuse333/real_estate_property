@@ -99,9 +99,9 @@ useEffect(()=> {
     if(tiltAngle <=10){
         setTiltFinished(true)
     }
-    // else{
-    //     setTiltFinished(false)
-    // }
+    else{
+        setTiltFinished(false)
+    }
 },[tiltAngle])
     
 
@@ -173,22 +173,12 @@ useEffect(()=> {
 
     }
 
-    const socialVariants = (delay) => {
-
-        return {
-
-        
+    const socialVariants = {
         initial:{
-            opacity:0,
-            y:10
+            opacity:0
         },
-            animate:{
-                opacity:1,
-                transition:{
-                    delay:1.5 + delay
-                },
-                y:0
-            }
+        {
+            hidden:opacity
         }
 
     }
@@ -295,10 +285,7 @@ useEffect(()=> {
                <div className="profile-socials">
                 
                 {socials.map((social, index) => (
-                    <motion.img
-                    initial={socialVariants((index * 0.5)).initial}
-                    animate={tiltFinished ?socialVariants((index * 0.25)).animate : null }
-                     src={social.image} key={index} />
+                    <img src={social.image} key={index} />
                 ))}
             </div>
             </div>

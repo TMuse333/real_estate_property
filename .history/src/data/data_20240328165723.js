@@ -20,7 +20,7 @@ export const testimonials = [
     
 ];
 
-export const hydroText = [
+export const hyd = [
     {
       name: "Scenic Views",
       description: "Bedford offers stunning views of the Bedford Basin and has many homes situated along its picturesque coastline, providing residents with breathtaking views of the water."
