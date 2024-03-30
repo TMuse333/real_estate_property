@@ -49,23 +49,13 @@ const ImageUploader = ({ onSingleImageUpload, onMultipleImagesUpload, multiple }
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
+      {/* {droppedImages.map((imageURL, index) => (
+        <div key={index} className="image-preview">
+          <img src={imageURL} alt={`Dropped ${index + 1}`} />
+        </div>
+      ))} */}
 
-{multiple ? (
-  droppedImages.map((imageURL, index) => (
-    <div key={index} className="image-preview">
-      <img src={imageURL} alt={`Dropped ${index + 1}`} />
-    </div>
-  ))
-) : (
-  droppedImages.length > 0 && (
-    <div className="image-preview">
-      <img src={droppedImages[droppedImages.length - 1]} alt="Single dropped image" />
-    </div>
-  )
-)}
-  
-
-    
+      <img src={droppedImages[0]}/>
       <p>Drag and drop images here or click to upload</p>
       <input
         type="file"
