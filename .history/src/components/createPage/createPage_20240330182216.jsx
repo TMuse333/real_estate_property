@@ -73,7 +73,7 @@ const CreateText = ({ onSave }) => {
   return (
     <div className='create-page-container'>
       <h2>Create Property Text</h2>
-      {/* {featureInputs.map((feature) => (
+      {featureInputs.map((feature) => (
         <div className='input-labels'
         key={feature.key}>
           <label htmlFor={feature.key}>{feature.name}:</label>
@@ -86,10 +86,9 @@ const CreateText = ({ onSave }) => {
             className='text-input'
           />
         </div>
-      ))} */}
+      ))}
       <button onClick={handleSave}>Save</button>
-      <ImageUploader
-      multiple={false}/>
+      <ImageUploader/>
     </div>
   );
 };

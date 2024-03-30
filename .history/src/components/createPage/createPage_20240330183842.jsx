@@ -88,8 +88,7 @@ const CreateText = ({ onSave }) => {
         </div>
       ))} */}
       <button onClick={handleSave}>Save</button>
-      <ImageUploader
-      multiple={false}/>
+      <ImageUploader/>
     </div>
   );
 };
