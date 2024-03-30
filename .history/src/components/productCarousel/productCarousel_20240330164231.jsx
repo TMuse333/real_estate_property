@@ -196,7 +196,7 @@ const handleTouchEnd = () => {
 
 // Attach touch event listeners
 useEffect(() => {
-    const carouselElement = document.getElementById('area-info');
+    const carouselElement = document.getElementById('product-carousel-container');
     carouselElement.addEventListener('touchstart', handleTouchStart);
     carouselElement.addEventListener('touchmove', handleTouchMove);
     carouselElement.addEventListener('touchend', handleTouchEnd);
