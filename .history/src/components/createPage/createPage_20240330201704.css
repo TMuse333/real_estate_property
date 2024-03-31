@@ -1,0 +1,33 @@
+.create-page-container{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    background-color: black;
+}
+
+.inputs{
+
+}
+
+/* .input-labels{
+    width:75vw;
+    margin: 0 auto;
+    background-color:rgb(3, 3, 38);
+
+
+} */
+
+.input-labels label {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.text-input {
+    text-align: left;
+    margin-bottom: 2rem;
+    background-color:#331c00 ;
+  }
