@@ -7,7 +7,6 @@ import insta from '../../media/instagram-logo.svg.png'
 import facebook from '../../media/facebook.jpeg'
 import x from '../../media/x-logo.png'
 import { motion } from "framer-motion";
-import { input } from "@tensorflow/tfjs";
 
 const Profile = ({id,profileName,
 profileTitle,profileImage,profileCompany,
@@ -43,7 +42,7 @@ inputVariant}) => {
         };
 
         const observer = new IntersectionObserver(([entry]) => {
-            
+            // Check if target element is intersecting
             setInView(entry.isIntersecting);
         }, options);
 
@@ -162,8 +161,8 @@ useEffect(()=> {
 
         return {
            hidden:{
-            x: inputVariant ? 0 :direction * 40,
-            opacity: inputVariant ? 1 : 0
+            x: direction * 40,
+            opacity:0
            },
            animate:{
             x:0,
@@ -183,8 +182,8 @@ useEffect(()=> {
 
         
         initial:{
-            opacity: inputVariant ? 1 :0,
-            y: inputVariant ? 0 :10
+            opacity:0,
+            y:10
         },
             animate:{
                 opacity:1,
@@ -215,12 +214,13 @@ useEffect(()=> {
           
               src={profileImage || tom} className='profile-image' />
             <motion.h2
-           
+            // initial={textVariants(true,2).initial}
+            // animate={tiltFinished ? textVariants(true,2).animate : null}
             >
                {profileName || 'Your name Here'}</motion.h2>
             <h3>{profileCompany || 'Company Name'}</h3>
             <p>{profileTitle || 'Your position here'}</p>
-            
+            {/* <p>REL#1234567890</p> */}
             <div className="profile-contacts">
 
 <motion.h2
@@ -249,7 +249,7 @@ useEffect(()=> {
 
             <section className="profile-container " ref={profileRef} id='broker'
             style={
-                { transform: !inputVariant ? `perspective(1000px) rotateX(${tiltAngle}deg)` : null}
+                { transform: `perspective(1000px) rotateX(${tiltAngle}deg)` }
             }>
 
 

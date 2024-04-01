@@ -183,8 +183,8 @@ useEffect(()=> {
 
         
         initial:{
-            opacity: inputVariant ? 1 :0,
-            y: inputVariant ? 0 :10
+            opacity: input0,
+            y:10
         },
             animate:{
                 opacity:1,

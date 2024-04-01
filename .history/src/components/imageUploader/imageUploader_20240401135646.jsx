@@ -57,7 +57,7 @@ inputName, setterFunction, imageArray }) => {
 
   useEffect(() => {
     if (multiple && droppedImages.length > 0 && setterFunction) {
-      setterFunction(imageArray => [...imageArray, droppedImages[droppedImages.length-1]]);
+      setterFunction(imageArray => [...imageArray, ...droppedImages[droppedImages.length-1]]);
       
     } 
     else

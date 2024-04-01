@@ -7,7 +7,6 @@ import insta from '../../media/instagram-logo.svg.png'
 import facebook from '../../media/facebook.jpeg'
 import x from '../../media/x-logo.png'
 import { motion } from "framer-motion";
-import { input } from "@tensorflow/tfjs";
 
 const Profile = ({id,profileName,
 profileTitle,profileImage,profileCompany,
@@ -163,7 +162,7 @@ useEffect(()=> {
         return {
            hidden:{
             x: inputVariant ? 0 :direction * 40,
-            opacity: inputVariant ? 1 : 0
+            opacity: inputVariant ? 1 :0
            },
            animate:{
             x:0,
@@ -183,8 +182,8 @@ useEffect(()=> {
 
         
         initial:{
-            opacity: inputVariant ? 1 :0,
-            y: inputVariant ? 0 :10
+            opacity:0,
+            y:10
         },
             animate:{
                 opacity:1,
@@ -249,7 +248,7 @@ useEffect(()=> {
 
             <section className="profile-container " ref={profileRef} id='broker'
             style={
-                { transform: !inputVariant ? `perspective(1000px) rotateX(${tiltAngle}deg)` : null}
+                { transform: `perspective(1000px) rotateX(${tiltAngle}deg)` }
             }>
 
 

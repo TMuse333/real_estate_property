@@ -41,11 +41,11 @@ inputName, setterFunction, imageArray }) => {
     });
 
     if (multiple && setterFunction && fileList && fileList.length > 0) {
-      // setterFunction((imageArray) => [...imageArray,droppedImages[fileList.length - 1]]); 
+      setterFunction((imageArray) => [...imageArray,droppedImages[fileList.length - 1]]); 
       // Append the dropped files to the array
     } else if (!multiple && setterFunction && fileList.length > 0) {
       // If multiple is false and setterFunction is provided, update with the first file
-      // setterFunction(droppedImages[0]); 
+      setterFunction(droppedImages[0]); 
     }
   ;
 
@@ -57,7 +57,7 @@ inputName, setterFunction, imageArray }) => {
 
   useEffect(() => {
     if (multiple && droppedImages.length > 0 && setterFunction) {
-      setterFunction(imageArray => [...imageArray, droppedImages[droppedImages.length-1]]);
+      setterFunction(imageArray => [...imageArray, ...fileList[fileList.length-1]]);
       
     } 
     else

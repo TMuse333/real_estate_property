@@ -183,8 +183,8 @@ useEffect(()=> {
 
         
         initial:{
-            opacity: inputVariant ? 1 :0,
-            y: inputVariant ? 0 :10
+            opacity:0,
+            y:10
         },
             animate:{
                 opacity:1,
@@ -249,7 +249,7 @@ useEffect(()=> {
 
             <section className="profile-container " ref={profileRef} id='broker'
             style={
-                { transform: !inputVariant ? `perspective(1000px) rotateX(${tiltAngle}deg)` : null}
+                { transform: !inputVariant ? `perspective(1000px) rotateX(${tiltAngle}deg)` }
             }>
 
 
