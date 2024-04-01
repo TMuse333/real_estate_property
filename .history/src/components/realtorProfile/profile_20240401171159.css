@@ -68,13 +68,6 @@ margin-left: 2rem;
         flex-direction: column;
     }
 
-    .input-name input{
-        padding:0.5rem;
-        border-radius: 1rem;
-        border: 2px solid transparent;
-        margin-bottom: 1.5rem;
-    }
-
     .profile-image{
         position: absolute;
         left:50%;

@@ -222,8 +222,6 @@ useEffect(()=>{
     </div>
 
     <Profile
-    inputVariant={true}
-    />
 
 {dataSubmitted && (
   <Property

@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useImageContext } from '../../context/imageContext';
 import ImageUploader from '../imageUploader/imageUploader';
 import Property from '../property/property';
-import Profile from '../realtorProfile/profile';
 import './createPage.css';
 
 const CreateText = ({ onSave }) => {
@@ -221,9 +220,7 @@ useEffect(()=>{
       <button onClick={handleSave}>Create page</button>
     </div>
 
-    <Profile
-    inputVariant={true}
-    />
+    <Profi
 
 {dataSubmitted && (
   <Property

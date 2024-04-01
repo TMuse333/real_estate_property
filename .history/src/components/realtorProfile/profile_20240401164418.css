@@ -50,29 +50,16 @@
         /* justify-content: flex-end; */
         /* background-color: red; */
         /* margin-left: auto; */
-        justify-content: flex-start;
+        justify-content: flex-end;
 width:auto;
 max-width: auto;
-margin-left: 2rem;
+/* margin-right: 2rem; */
 
 
     }
 
     .profile-name{
         transform: translateX(50%);
-        
-    }
-
-    .input-name{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .input-name input{
-        padding:0.5rem;
-        border-radius: 1rem;
-        border: 2px solid transparent;
-        margin-bottom: 1.5rem;
     }
 
     .profile-image{
@@ -84,7 +71,5 @@ margin-left: 2rem;
 
     .profile-contacts{
         margin-right: 2rem;
-   
-        text-align: center;
     }
 }

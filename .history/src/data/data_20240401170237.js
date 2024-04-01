@@ -77,7 +77,7 @@ alt:'Vegeta2'
 ]
 
 
-{/* <>
+<>
 <label htmlFor="name"
 >
 <input
@@ -89,4 +89,4 @@ onChange={handleInputChange}>
 
 </input>
 </label>
-</> */}
+</>

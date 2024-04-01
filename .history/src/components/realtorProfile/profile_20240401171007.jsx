@@ -8,7 +8,6 @@ import facebook from '../../media/facebook.jpeg'
 import x from '../../media/x-logo.png'
 import { motion } from "framer-motion";
 import { input } from "@tensorflow/tfjs";
-import ImageUploader from "../imageUploader/imageUploader";
 
 const Profile = ({id,profileName,
 profileTitle,profileImage,profileCompany,
@@ -330,7 +329,7 @@ useEffect(()=> {
 
 
                 
-                <div className="profile-name input-name">
+                <div className="profile-name">
 
                
                   
@@ -346,77 +345,43 @@ onChange={handleInputChange}>
 </input>
 </label>
 
-<label htmlFor="Company "
->
-<input
-type='text'
-name='Company'
-placeholder="Enter your Company name "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-
-<label htmlFor="Position "
->
-<input
-type='text'
-name='Position'
-placeholder="Enter your position "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-
-
-
-
-
 
 
                     
              
 
                
-      
-         
-
+            <motion.h3
+              initial={textVariants(true,2).hidden}
+              animate={tiltFinished ? textVariants(true,0).animate : null}>
+              {profileCompany || 'Company Name'}
+</motion.h3>
+            <motion.p
+              initial={textVariants(true,2).hidden}
+              animate={tiltFinished ? textVariants(true,0).animate : null}
+            >{profileTitle || 'Your position here'}</motion.p>
+            <motion.p
+              initial={textVariants(true,2).hidden}
+              animate={tiltFinished ? textVariants(true,0).animate : null}>REL#1234567890</motion.p>
                 </div>
-
-                <ImageUploader/>
-                {/* <motion.img
+                <motion.img
            
-           src={profileImage || tom}  className='profile-image' /> */}
+           src={profileImage || tom}  className='profile-image' />
 
-              <div className="profile-contacts input-name">
+              <div className="profile-contacts">
 
                     <motion.h2
                       initial={textVariants(false,2).hidden}
                       animate={tiltFinished ? textVariants(false,0.6).animate : null}>Contact information</motion.h2>
-                  <label htmlFor="Company "
->
-<input
-type='name'
-name='Phone '
-placeholder="Enter your phone number "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-<label htmlFor="Company "
->
-<input
-type='name'
-name='Phone '
-placeholder="Enter your phone number "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
+                    <motion.p
+                     initial={textVariants(false,2).hidden}
+                     animate={tiltFinished ? textVariants(false,0.6).animate : null}
+                     >{profileNumber || '123 456 794'}
+                     </motion.p>
+                    <motion.p
+                     initial={textVariants(false,2).hidden}
+                     animate={tiltFinished ? textVariants(false,0.6).animate : null}
+                    >{profileEmail || 'Your email here'}</motion.p>
             
                <div className="profile-socials">
                 

@@ -8,7 +8,6 @@ import facebook from '../../media/facebook.jpeg'
 import x from '../../media/x-logo.png'
 import { motion } from "framer-motion";
 import { input } from "@tensorflow/tfjs";
-import ImageUploader from "../imageUploader/imageUploader";
 
 const Profile = ({id,profileName,
 profileTitle,profileImage,profileCompany,
@@ -384,8 +383,6 @@ onChange={handleInputChange}>
          
 
                 </div>
-
-                <ImageUploader/>
                 {/* <motion.img
            
            src={profileImage || tom}  className='profile-image' /> */}
@@ -406,17 +403,10 @@ onChange={handleInputChange}>
 
 </input>
 </label>
-<label htmlFor="Company "
->
-<input
-type='name'
-name='Phone '
-placeholder="Enter your phone number "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
+                    <motion.p
+                     initial={textVariants(false,2).hidden}
+                     animate={tiltFinished ? textVariants(false,0.6).animate : null}
+                    >{profileEmail || 'Your email here'}</motion.p>
             
                <div className="profile-socials">
                 

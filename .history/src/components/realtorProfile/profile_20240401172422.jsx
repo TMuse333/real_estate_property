@@ -8,7 +8,6 @@ import facebook from '../../media/facebook.jpeg'
 import x from '../../media/x-logo.png'
 import { motion } from "framer-motion";
 import { input } from "@tensorflow/tfjs";
-import ImageUploader from "../imageUploader/imageUploader";
 
 const Profile = ({id,profileName,
 profileTitle,profileImage,profileCompany,
@@ -385,7 +384,7 @@ onChange={handleInputChange}>
 
                 </div>
 
-                <ImageUploader/>
+                <Image
                 {/* <motion.img
            
            src={profileImage || tom}  className='profile-image' /> */}

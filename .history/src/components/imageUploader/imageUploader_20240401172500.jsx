@@ -3,7 +3,7 @@ import { useImageContext } from '../../context/imageContext';
 import './imageUploader.css';
 
 const ImageUploader = ({ onSingleImageUpload, onMultipleImagesUpload, multiple,
-inputName, setterFunction, profileImage }) => {
+inputName, setterFunction,  }) => {
 
 
 

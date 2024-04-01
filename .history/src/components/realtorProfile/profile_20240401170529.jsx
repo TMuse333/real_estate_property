@@ -8,7 +8,6 @@ import facebook from '../../media/facebook.jpeg'
 import x from '../../media/x-logo.png'
 import { motion } from "framer-motion";
 import { input } from "@tensorflow/tfjs";
-import ImageUploader from "../imageUploader/imageUploader";
 
 const Profile = ({id,profileName,
 profileTitle,profileImage,profileCompany,
@@ -257,10 +256,7 @@ useEffect(()=> {
                 { transform: !inputVariant ? `perspective(1000px) rotateX(${tiltAngle}deg)` : null}
             }>
 
-                {!inputVariant ? (
-
-             <>
-           
+                
 
 
                 <div className="profile-desktop">
@@ -323,113 +319,6 @@ useEffect(()=> {
             </div>
             </div>
             <Testimonials />
-            </>
-
-            ) : (
-                <div className="profile-desktop">
-
-
-                
-                <div className="profile-name input-name">
-
-               
-                  
-<label htmlFor="name"
->
-<input
-type='text'
-name='name'
-placeholder="Enter your name "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-
-<label htmlFor="Company "
->
-<input
-type='text'
-name='Company'
-placeholder="Enter your Company name "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-
-<label htmlFor="Position "
->
-<input
-type='text'
-name='Position'
-placeholder="Enter your position "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-
-
-
-
-
-
-
-                    
-             
-
-               
-      
-         
-
-                </div>
-
-                <ImageUploader/>
-                {/* <motion.img
-           
-           src={profileImage || tom}  className='profile-image' /> */}
-
-              <div className="profile-contacts input-name">
-
-                    <motion.h2
-                      initial={textVariants(false,2).hidden}
-                      animate={tiltFinished ? textVariants(false,0.6).animate : null}>Contact information</motion.h2>
-                  <label htmlFor="Company "
->
-<input
-type='name'
-name='Phone '
-placeholder="Enter your phone number "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-<label htmlFor="Company "
->
-<input
-type='name'
-name='Phone '
-placeholder="Enter your phone number "
-onChange={handleInputChange}>
-
-
-</input>
-</label>
-            
-               <div className="profile-socials">
-                
-                {socials.map((social, index) => (
-                    <motion.img
-                    initial={socialVariants((index * 0.5)).initial}
-                    animate={tiltFinished ?socialVariants((index * 0.25)).animate : null }
-                     src={social.image} key={index} />
-                ))}
-            </div>
-            </div>
-            </div>
-            )}
             </section>
             </>
         )}
