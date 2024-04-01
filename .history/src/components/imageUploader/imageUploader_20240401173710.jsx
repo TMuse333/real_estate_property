@@ -69,39 +69,28 @@ const ImageUploader = ({ onSingleImageUpload, onMultipleImagesUpload, multiple, 
     }
   }, [droppedImages]);
 
-  const uploaderClassName = profileImage ? "profile-image-uploader" : "image-uploader";
-
   return (
-    <>
-      <div className={uploaderClassName} onDragOver={handleDragOver} onDrop={handleDrop}>
-        {multiple ? (
-          <>
-            {droppedImages.map((imageURL, index) => (
-              <div key={index} className="image-preview">
-                <img src={imageURL} alt={`Dropped ${index + 1}`} />
-              </div>
-            ))}
-          
-          </>
-        ) : !multiple && droppedImages.length > 0 ? (
-          <>
-            <div className="image-preview">
-              <img src={droppedImages[droppedImages.length - 1]} alt="Single dropped image" />
-            </div>
-            <p>Drag and drop images here or click to upload {inputName}</p>
-            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
-          </>
-        ) : profileImage ? (
-          <>
-            slatty
-          </>
-        ) : null}
-          <p>Drag and drop images here or click to upload {inputName}</p>
-            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
-      </div>
-    </>
-  );
+    <div 
+    className="image-uploader" onDragOver={handleDragOver} onDrop={handleDrop}>
+      {multiple ? (
+        droppedImages.map((imageURL, index) => (
+          <div key={index} className="image-preview">
+            <img src={imageURL} alt={`Dropped ${index + 1}`} />
+          </div>
+        ))
+      ) : (
+        !multiple && droppedImages.length > 0 && (
+          <div className="image-preview ">
+            <img 
+            src={droppedImages[droppedImages.length - 1]} alt="Single dropped image" />
+          </div>
+        )
+      )}
 
-        }
-  
+      <p>Drag and drop images here or click to upload {inputName}</p>
+      <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
+    </div>
+  );
+};
+
 export default ImageUploader;

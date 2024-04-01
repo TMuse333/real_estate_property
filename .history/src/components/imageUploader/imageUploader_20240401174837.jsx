@@ -96,8 +96,6 @@ const ImageUploader = ({ onSingleImageUpload, onMultipleImagesUpload, multiple, 
             slatty
           </>
         ) : null}
-          <p>Drag and drop images here or click to upload {inputName}</p>
-            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
       </div>
     </>
   );

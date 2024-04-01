@@ -81,7 +81,8 @@ const ImageUploader = ({ onSingleImageUpload, onMultipleImagesUpload, multiple, 
                 <img src={imageURL} alt={`Dropped ${index + 1}`} />
               </div>
             ))}
-          
+            <p>Drag and drop images here or click to upload {inputName}</p>
+            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
           </>
         ) : !multiple && droppedImages.length > 0 ? (
           <>
@@ -96,12 +97,8 @@ const ImageUploader = ({ onSingleImageUpload, onMultipleImagesUpload, multiple, 
             slatty
           </>
         ) : null}
-          <p>Drag and drop images here or click to upload {inputName}</p>
-            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
       </div>
     </>
   );
-
-        }
   
 export default ImageUploader;

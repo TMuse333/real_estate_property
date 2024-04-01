@@ -33,10 +33,7 @@
     height:40vh;
     position: absolute;
     transform: translateX(-50%);
-    left:50%;
-    display: flex;
-
-    justify-content: center;
+    
 
   }
 

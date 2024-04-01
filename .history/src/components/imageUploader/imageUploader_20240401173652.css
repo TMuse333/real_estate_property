@@ -28,17 +28,11 @@
     height:100px;
   }
 
-  .profile-image-uploader{
-    background-color: rgb(31, 28, 28);
+  /* .profile-image{
     height:40vh;
-    position: absolute;
-    transform: translateX(-50%);
-    left:50%;
-    display: flex;
-
-    justify-content: center;
-
-  }
-
-
+    background-color: grey;
+   border-radius: 1rem;
+   width:30vw;
+   max-width: 260px;
+} *
   
