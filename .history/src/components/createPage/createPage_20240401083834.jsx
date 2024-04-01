@@ -148,15 +148,15 @@ const CreateText = ({ onSave }) => {
   
     setDataSubmitted(true);
   
-    // console.log('property data', propertyData);
+    console.log('property data', propertyData);
   };
   
  
   
   
 useEffect(()=>{
-  console.log('the herobanner is',propertyHerobanner)
-},[propertyHerobanner])
+  console.log('the herobanner is',prop)
+})
   
 
 
@@ -211,8 +211,7 @@ useEffect(()=>{
 
 {dataSubmitted && (
   <Property
-  propertyHerobanner={propertyHerobanner}
-  // {...propertyState}
+  {...propertyState}
   />
 )}
 

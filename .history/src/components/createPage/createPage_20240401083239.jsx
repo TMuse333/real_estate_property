@@ -39,8 +39,7 @@ const CreateText = ({ onSave }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const featureInputs = [
-    { name: 'Property Herobanner', key: 'property-herobanner',
-     image:true, setterFunction: setPropertyHerobanner },
+    { name: 'Property Herobanner', key: 'property-herobanner', image:true },
     { name: 'Property Price', key: 'property-price' },
     { name: 'Property Opening Date', key: 'property-openingDate' },
     { name: 'Property Closing Date', key: 'property-closingDate' },
@@ -148,15 +147,13 @@ const CreateText = ({ onSave }) => {
   
     setDataSubmitted(true);
   
-    // console.log('property data', propertyData);
+    console.log('property data', propertyData);
   };
   
  
   
   
-useEffect(()=>{
-  console.log('the herobanner is',propertyHerobanner)
-},[propertyHerobanner])
+
   
 
 
@@ -171,8 +168,7 @@ useEffect(()=>{
         {featureInputs.map((feature, index) => (
           <div key={index} style={{ display: index === currentIndex ? 'block' : 'none' }}>
             {feature.image ? (
-              <ImageUploader inputName={feature.name}
-              setterFunction={feature.setterFunction} />
+              <ImageUploader inputName={feature.name} />
             ) : (
               <div className='input-labels'>
                 <label htmlFor={feature.key}>{feature.name}:</label>
@@ -211,8 +207,7 @@ useEffect(()=>{
 
 {dataSubmitted && (
   <Property
-  propertyHerobanner={propertyHerobanner}
-  // {...propertyState}
+  {...propertyState}
   />
 )}
 

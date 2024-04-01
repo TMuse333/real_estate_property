@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useImageContext } from '../../context/imageContext';
 import ImageUploader from '../imageUploader/imageUploader';
 import Property from '../property/property';
 import './createPage.css';
@@ -12,7 +11,7 @@ const CreateText = ({ onSave }) => {
 
   
 
-
+  const [propertyHerobanner, setPropertyHerobanner] = useState(null);
   const [propertyPrice, setPropertyPrice] = useState(null);
   const [propertyOpeningDate, setPropertyOpeningDate] = useState(null);
   const [propertyClosingDate, setPropertyClosingDate] = useState(null);
@@ -27,10 +26,6 @@ const CreateText = ({ onSave }) => {
   const [factsList, setFactsList] = useState(null);
   const [profile, setProfile] = useState(null);
 
-  const {propertyHerobanner, setPropertyHerobanner} = useImageContext()
-
-
-
   const handleInputChange = (event) => {
 
     setPropertyPrice(event.target.value)
@@ -39,8 +34,7 @@ const CreateText = ({ onSave }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const featureInputs = [
-    { name: 'Property Herobanner', key: 'property-herobanner',
-     image:true, setterFunction: setPropertyHerobanner },
+    { name: 'Property Herobanner', key: 'property-herobanner', image:true },
     { name: 'Property Price', key: 'property-price' },
     { name: 'Property Opening Date', key: 'property-openingDate' },
     { name: 'Property Closing Date', key: 'property-closingDate' },
@@ -140,25 +134,22 @@ const CreateText = ({ onSave }) => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? featureInputs.length - 1 : prevIndex - 1));
   };
 
-  const handleSave = () => {
-    // Update propertyData with the extracted values
-   
-  
+ 
    
   
     setDataSubmitted(true);
   
-    // console.log('property data', propertyData);
+    console.log('property data', propertyData);
   };
   
  
   
   
-useEffect(()=>{
-  console.log('the herobanner is',propertyHerobanner)
-},[propertyHerobanner])
-  
 
+  
+  useEffect(()=> {
+    console.log('data updated',propertyData)
+  },[propertyData])
 
 
 
@@ -171,8 +162,7 @@ useEffect(()=>{
         {featureInputs.map((feature, index) => (
           <div key={index} style={{ display: index === currentIndex ? 'block' : 'none' }}>
             {feature.image ? (
-              <ImageUploader inputName={feature.name}
-              setterFunction={feature.setterFunction} />
+              <ImageUploader inputName={feature.name} />
             ) : (
               <div className='input-labels'>
                 <label htmlFor={feature.key}>{feature.name}:</label>
@@ -180,7 +170,7 @@ useEffect(()=>{
                   type="text"
                   id={feature.key}
                   name={feature.key}
-                
+                  value={propertyData[feature.key] || ''}
                   onChange={(e) => handleChange(e, feature.key)} 
                   className='text-input'
                   // placeholder='enter text here'
@@ -211,8 +201,7 @@ useEffect(()=>{
 
 {dataSubmitted && (
   <Property
-  propertyHerobanner={propertyHerobanner}
-  // {...propertyState}
+  {...propertyState}
   />
 )}
 

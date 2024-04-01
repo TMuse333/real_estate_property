@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useImageContext } from '../../context/imageContext';
 import './imageUploader.css';
 
@@ -40,12 +40,6 @@ inputName, setterFunction }) => {
       setDroppedImages((prevImages) => [...prevImages, ...imageURLs]);
     });
 
-    if (setterFunction) {
-      setterFunction(fileList[0]); 
-    }
-
- 
-
     // Invoke the appropriate upload function based on the multiple prop
     if (multiple && onMultipleImagesUpload) {
       onMultipleImagesUpload(fileList);
@@ -53,10 +47,6 @@ inputName, setterFunction }) => {
       onSingleImageUpload(fileList[0]); // Upload only the first file
     }
   };
-
-  useEffect(()=>{
-    setterFunction(droppedImages[0])
-  },[droppedImages])
 
   return (
     <div

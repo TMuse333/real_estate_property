@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useImageContext } from '../../context/imageContext';
 import './imageUploader.css';
 
@@ -41,7 +41,7 @@ inputName, setterFunction }) => {
     });
 
     if (setterFunction) {
-      setterFunction(fileList[0]); 
+      setterFunction(fileList[0]); // Assuming fileList[0] contains the first image file
     }
 
  
@@ -53,10 +53,6 @@ inputName, setterFunction }) => {
       onSingleImageUpload(fileList[0]); // Upload only the first file
     }
   };
-
-  useEffect(()=>{
-    setterFunction(droppedImages[0])
-  },[droppedImages])
 
   return (
     <div

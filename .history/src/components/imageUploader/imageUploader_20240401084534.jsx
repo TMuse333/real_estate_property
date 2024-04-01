@@ -41,7 +41,7 @@ inputName, setterFunction }) => {
     });
 
     if (setterFunction) {
-      setterFunction(fileList[0]); 
+      setterFunction(fileList[0]); // Assuming fileList[0] contains the first image file
     }
 
  
@@ -56,7 +56,7 @@ inputName, setterFunction }) => {
 
   useEffect(()=>{
     setterFunction(droppedImages[0])
-  },[droppedImages])
+  },)
 
   return (
     <div

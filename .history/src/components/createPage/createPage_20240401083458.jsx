@@ -148,15 +148,13 @@ const CreateText = ({ onSave }) => {
   
     setDataSubmitted(true);
   
-    // console.log('property data', propertyData);
+    console.log('property data', propertyData);
   };
   
  
   
   
-useEffect(()=>{
-  console.log('the herobanner is',propertyHerobanner)
-},[propertyHerobanner])
+
   
 
 
@@ -172,7 +170,7 @@ useEffect(()=>{
           <div key={index} style={{ display: index === currentIndex ? 'block' : 'none' }}>
             {feature.image ? (
               <ImageUploader inputName={feature.name}
-              setterFunction={feature.setterFunction} />
+               />
             ) : (
               <div className='input-labels'>
                 <label htmlFor={feature.key}>{feature.name}:</label>
@@ -211,8 +209,7 @@ useEffect(()=>{
 
 {dataSubmitted && (
   <Property
-  propertyHerobanner={propertyHerobanner}
-  // {...propertyState}
+  {...propertyState}
   />
 )}
 

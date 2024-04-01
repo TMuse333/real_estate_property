@@ -22,9 +22,7 @@ function App() {
 
   return (
     
-     <ImageProvider>
-
-     
+     <Imag
       <Routes>
         <Route path="/" element={<Property />} />
         <Route path="/property" element={<Property />} />
@@ -35,7 +33,6 @@ function App() {
         {/* Render routes from code2 state */}
        
       </Routes>
-      </ImageProvider>
  
   );
 }

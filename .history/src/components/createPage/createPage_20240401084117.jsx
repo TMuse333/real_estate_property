@@ -211,8 +211,7 @@ useEffect(()=>{
 
 {dataSubmitted && (
   <Property
-  propertyHerobanner={propertyHerobanner}
-  // {...propertyState}
+  {...propertyState}
   />
 )}
 

@@ -5,8 +5,7 @@ import Homepage from './components/homepage/homepage';
 import Property from './components/property/property';
 import NewPage from './components/newPage/newPage';
 import CreatePage from './components/createPage/createPage';
-import { ImageProvider } from './context/imageContext';
-import { Imag } from '@tensorflow/tfjs';
+
 
 function App() {
 
@@ -22,8 +21,6 @@ function App() {
 
   return (
     
-     <ImageProvider>
-
      
       <Routes>
         <Route path="/" element={<Property />} />
@@ -33,10 +30,11 @@ function App() {
 
         </Route>
         {/* Render routes from code2 state */}
-       
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
       </Routes>
-      </ImageProvider>
- 
+     </RouteProvider>
   );
 }
 

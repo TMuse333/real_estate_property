@@ -41,7 +41,7 @@ inputName, setterFunction }) => {
     });
 
     if (setterFunction) {
-      setterFunction(fileList[0]); 
+      setterFunction(fileList[0]); // Assuming fileList[0] contains the first image file
     }
 
  

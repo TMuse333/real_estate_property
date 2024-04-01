@@ -35,7 +35,6 @@ function App() {
         {/* Render routes from code2 state */}
        
       </Routes>
-      </ImageProvider>
  
   );
 }
