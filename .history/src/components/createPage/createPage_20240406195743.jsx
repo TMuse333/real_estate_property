@@ -199,7 +199,9 @@ useEffect(()=>{
            <Profile
            inputVariant={true}
            />
-              ): 
+              ): (
+
+              ) feature. :
               
               (
               <div className='input-labels'>

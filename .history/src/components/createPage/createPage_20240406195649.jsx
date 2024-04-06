@@ -199,9 +199,7 @@ useEffect(()=>{
            <Profile
            inputVariant={true}
            />
-              ): 
-              
-              (
+              ):(
               <div className='input-labels'>
                 <label htmlFor={feature.key}>{feature.name}:</label>
                 <input

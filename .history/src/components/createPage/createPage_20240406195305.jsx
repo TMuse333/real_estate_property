@@ -11,7 +11,7 @@ const CreateText = ({ onSave }) => {
   const [dataSubmitted, setDataSubmitted] = useState(false)
 
 
-  const [numOfCarousels, setNumOfCarousels] = useState(2)
+  const [numOfCarousels, setNumOfCarousels] = useState(0)
 
 
   const [propertyPrice, setPropertyPrice] = useState(null);
@@ -48,7 +48,9 @@ const CreateText = ({ onSave }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const featureInputs = [
-    { name: 'Property Herobanner', key: 'property-herobanner', image: true, setterFunction: setPropertyHerobanner, multipleImages: false, imageArray: null },
+    { name: 'Property Herobanner', key: 'property-herobanner',
+     image:true, setterFunction: setPropertyHerobanner, multipleImages:false,
+    imageArray:null },
     { name: 'Property Price', key: 'property-price' },
     { name: 'Property Opening Date', key: 'property-openingDate' },
     { name: 'Property Closing Date', key: 'property-closingDate' },
@@ -56,20 +58,16 @@ const CreateText = ({ onSave }) => {
     { name: 'Property Description 2', key: 'property-description2' },
     { name: 'Property Description 3', key: 'property-description3' },
     { name: 'Property Video', key: 'propertyVideo' },
-    { name: 'Carousels', key: 'feature-attributes' },
-    ...Array.from({ length: numOfCarousels }, (_, index) => ({
-      name: `Slider Images ${index + 1}`,
-      key: `slider-images-${index + 1}`,
-      image: true,
-      setterFunction: (images) => handleSliderImagesChange(index, images),
-      multipleImages: true,
-      imageArray: sliderImages[index] || [], // Default to empty array if not yet initialized
-    })),
+    { name: 'Feature Attributes', key: 'feature-attributes' },
+    { name: 'Slider Images', key: 'slider-images',
+  image:true, setterFunction: setSliderImages, imageArray: sliderImages,
+multipleImages:true },
+    { name: 'Slider Images2', key: 'slider-images2' },
     { name: 'Documents', key: 'documents' },
     { name: 'Facts list', key: 'facts-list' },
-    { name: 'Profile', key: 'profile', isProfile: true }
+    { name: 'Profile', key: 'profile',isProfile:true }
+   
   ];
-  
 
   const propertyState = {
     propertyHerobanner,
@@ -199,9 +197,7 @@ useEffect(()=>{
            <Profile
            inputVariant={true}
            />
-              ): 
-              
-              (
+              ):(
               <div className='input-labels'>
                 <label htmlFor={feature.key}>{feature.name}:</label>
                 <input

@@ -11,7 +11,7 @@ const CreateText = ({ onSave }) => {
   const [dataSubmitted, setDataSubmitted] = useState(false)
 
 
-  const [numOfCarousels, setNumOfCarousels] = useState(2)
+  const [numOfCarousels, setNumOfCarousels] = useState(0)
 
 
   const [propertyPrice, setPropertyPrice] = useState(null);
@@ -56,7 +56,7 @@ const CreateText = ({ onSave }) => {
     { name: 'Property Description 2', key: 'property-description2' },
     { name: 'Property Description 3', key: 'property-description3' },
     { name: 'Property Video', key: 'propertyVideo' },
-    { name: 'Carousels', key: 'feature-attributes' },
+    { name: 'Feature Attributes', key: 'feature-attributes' },
     ...Array.from({ length: numOfCarousels }, (_, index) => ({
       name: `Slider Images ${index + 1}`,
       key: `slider-images-${index + 1}`,
@@ -199,9 +199,7 @@ useEffect(()=>{
            <Profile
            inputVariant={true}
            />
-              ): 
-              
-              (
+              ):(
               <div className='input-labels'>
                 <label htmlFor={feature.key}>{feature.name}:</label>
                 <input
