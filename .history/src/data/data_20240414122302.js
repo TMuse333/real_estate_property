@@ -91,3 +91,5 @@ onChange={handleInputChange}>
 </label>
 </> */}
 
+//    const initialSliderImages = Array.from({ length: numberOfCarousels }, () => []);
+const [sliderImages, setSliderImages] = useState(initialSliderImages);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useImageContext } from '../../context/imageContext';
+// import { useImageContext } from '../../context/imageContext';
 import ImageUploader from '../imageUploader/imageUploader';
 import Property from '../property/property';
 import Profile from '../realtorProfile/profile';

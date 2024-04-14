@@ -5,11 +5,11 @@ const ImageContext = createContext()
 
 
 
-export const ImageProvider = ({children, numberOfCarousels}) => {
+export const ImageProvider = ({children, numOfCarousels}) => {
 
     const [propertyHerobanner, setPropertyHerobanner] = useState(null)
 
-
+    const [sliderImages, setSliderImages] = useState([])
 
 
     const [profileImage, setProfileImage] = useState(img)
@@ -22,9 +22,6 @@ const [profileEmail, setProfileEmail] = useState(null)
 const [profilePhoneNumber, setProfilePhoneNumber ] = useState(null)
 
     const [createPageClicked, setCreatePageClicked] = useState(false)
-
-       const initialSliderImages = Array.from({ length: numberOfCarousels }, () => []);
-const [sliderImages, setSliderImages] = useState(initialSliderImages);
 
     const contextValue = {
         propertyHerobanner,

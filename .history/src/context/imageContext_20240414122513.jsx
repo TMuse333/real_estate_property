@@ -5,11 +5,11 @@ const ImageContext = createContext()
 
 
 
-export const ImageProvider = ({children, numberOfCarousels}) => {
+export const ImageProvider = ({children, numOfCarousels}) => {
 
     const [propertyHerobanner, setPropertyHerobanner] = useState(null)
 
-
+    const [sliderImages, setSliderImages] = useState([])
 
 
     const [profileImage, setProfileImage] = useState(img)

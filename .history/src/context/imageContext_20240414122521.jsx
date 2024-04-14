@@ -5,7 +5,7 @@ const ImageContext = createContext()
 
 
 
-export const ImageProvider = ({children, numberOfCarousels}) => {
+export const ImageProvider = ({children, numOfCarousels}) => {
 
     const [propertyHerobanner, setPropertyHerobanner] = useState(null)
 
