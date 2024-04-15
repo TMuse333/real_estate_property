@@ -12,8 +12,7 @@ const HydroList = ({text,intro,inputVariant}) => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 865);
 
     const {inputListLength, setInputListLength,
-    handleInputChange,inputList, setInputList,
-  handleDescriptionChange} = useListContext()
+    handleInputChange,inputList, setInputList} = useListContext()
   
     const renderInputs = () => {
       return Array.from({ length: inputListLength }, (_, index) => (

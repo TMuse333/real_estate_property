@@ -11,44 +11,52 @@ const HydroList = ({text,intro,inputVariant}) => {
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 865);
 
+    // const [inputListLength, setInputListLength] = useState(0)
+
+    // const [inputList, setInputList] = useState([])
+
+    // const handleInputChange = (index, value) => {
+    //   const newList = [...inputList];
+    //   newList[index] = value;
+    //   setInputList(newList);
+    // };
+
     const {inputListLength, setInputListLength,
-    handleInputChange,inputList, setInputList,
-  handleDescriptionChange} = useListContext()
+    handleInputChange} = useListContext()
   
     const renderInputs = () => {
-      return Array.from({ length: inputListLength }, (_, index) => (
-        <div key={index}>
-          <div className="hydro-element input-element">
-            <input
-              type="text"
-              onChange={(e) => handleInputChange(index, e.target.value)}
-              placeholder='add fact here'
-            />
-    
-            <button
-              onClick={() => handleContentClick(index)}
-              className="add-description-button"
-            >
-              {expandedIndices.includes(index) ? 'shrink description' : 'Add description'}
-            </button>
-          </div>
-    
-          <section className="hydro-expanded hydro-expanded-input">
-          <textarea 
-  placeholder="Add the description here"
-  onChange={(e) => handleDescriptionChange(index, e.target.value)}
-  style={contentStyle(index)}
-></textarea>
 
-          </section>
+      return Array.from({ length: inputListLength }, (_, index) => (
+
+        <>
+        <div className="hydro-element input-element"
+        key={index}
+        >
+        <input
+       
+          type="text"
+        
+          onChange={(e) => handleInputChange(index, e.target.value)}
+          placeholder='add fact here'
+        />
+
+        <button         onClick={()=>handleContentClick(index)}
+         className="add-description-button">
+          {expandedIndices.includes(index) ? 'shrink description' : 'Add description'}</button>
+
         </div>
+
+        <section className="hydro-expanded hydro-expanded-input"
+
+   >
+        <textarea placeholder="Add the description here"
+            style={contentStyle(index)}>
+
+            </textarea>
+            </section>
+                  </>
       ));
     };
-
-    useEffect(()=>{
-      console.log('the current list',inputList)
-    },[inputList])
-    
   
 
     const handleAddFact = () => {
@@ -97,7 +105,7 @@ const HydroList = ({text,intro,inputVariant}) => {
       }
   ];
 
-  text = inputList.length > 0 ? inputList :inputList
+  text = text || placeHolder
 
 
 
@@ -180,7 +188,7 @@ const HydroList = ({text,intro,inputVariant}) => {
 
             <div className="hydro-list"
                >
-               {inputList.map((list,index) => (
+               {text.map((text,index) => (
                 <div className="hydro-element"
                 key={index}
                 onClick={()=>handleContentClick(index)}
@@ -190,14 +198,14 @@ const HydroList = ({text,intro,inputVariant}) => {
                 >
 
 <div className="name-logo-box">
-              <h2>{list.title }</h2>
+              <h2>{text?.name }</h2>
               <div className="plus-minus">
               
               <div
-                className={`hydro-line ${expandedIndices === (index) ? "clicked" : ""}`}
+                className={`hydro-line ${expandedIndex === (index) ? "clicked" : ""}`}
               />
                  <div
-                className={`hydro-line ${expandedIndices === (index)  ? "clicked" : ""}`}
+                className={`hydro-line ${expandedIndex === (index)  ? "clicked" : ""}`}
              />
               
               </div>
@@ -215,7 +223,7 @@ const HydroList = ({text,intro,inputVariant}) => {
                   className=""
                  
                 >
-                    {list.description || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius excepturi beatae dolorum laborum reiciendis iste quisquam odio tempore tempora fugit?'}
+                    {text.description || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius excepturi beatae dolorum laborum reiciendis iste quisquam odio tempore tempora fugit?'}
                   </p>
                  
                   </section>

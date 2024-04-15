@@ -17,13 +17,6 @@ export const ListProvider = ({ children }) => {
     console.log('add fact clicked');
   };
 
-  const handleDescriptionChange = (index, value) => {
-    const newList = [...inputList];
-    newList[index] = { ...newList[index], description: value };
-    setInputList(newList);
-  };
-  
-
   // Placeholder data for initial inputList
   const placeHolder = [
     {
@@ -56,7 +49,6 @@ export const ListProvider = ({ children }) => {
     setInputListLength,
     inputVariant,
     setInputVariant,
-    handleDescriptionChange
   };
 
   return (

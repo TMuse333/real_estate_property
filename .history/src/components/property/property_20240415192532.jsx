@@ -168,11 +168,6 @@ id='profile'
     <section className="property-container ">
     <Navbar/>
 
-    <button onClick={handleCreatePage}
-     className="create-page-button">
-        createPage
-    </button>
-
     
    
     <div className="property-herobanner"

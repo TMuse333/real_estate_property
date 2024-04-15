@@ -12,8 +12,7 @@ const HydroList = ({text,intro,inputVariant}) => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 865);
 
     const {inputListLength, setInputListLength,
-    handleInputChange,inputList, setInputList,
-  handleDescriptionChange} = useListContext()
+    handleInputChange,inputList, setInputList} = useListContext()
   
     const renderInputs = () => {
       return Array.from({ length: inputListLength }, (_, index) => (
@@ -34,20 +33,11 @@ const HydroList = ({text,intro,inputVariant}) => {
           </div>
     
           <section className="hydro-expanded hydro-expanded-input">
-          <textarea 
-  placeholder="Add the description here"
-  onChange={(e) => handleDescriptionChange(index, e.target.value)}
-  style={contentStyle(index)}
-></textarea>
-
+            <textarea placeholder="Add the description here" style={contentStyle(index)}></textarea>
           </section>
         </div>
       ));
     };
-
-    useEffect(()=>{
-      console.log('the current list',inputList)
-    },[inputList])
     
   
 
@@ -180,7 +170,7 @@ const HydroList = ({text,intro,inputVariant}) => {
 
             <div className="hydro-list"
                >
-               {inputList.map((list,index) => (
+               {inputList.map((text,index) => (
                 <div className="hydro-element"
                 key={index}
                 onClick={()=>handleContentClick(index)}
@@ -190,7 +180,7 @@ const HydroList = ({text,intro,inputVariant}) => {
                 >
 
 <div className="name-logo-box">
-              <h2>{list.title }</h2>
+              <h2>{inputList?.title }</h2>
               <div className="plus-minus">
               
               <div
@@ -215,7 +205,7 @@ const HydroList = ({text,intro,inputVariant}) => {
                   className=""
                  
                 >
-                    {list.description || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius excepturi beatae dolorum laborum reiciendis iste quisquam odio tempore tempora fugit?'}
+                    {text.description || 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius excepturi beatae dolorum laborum reiciendis iste quisquam odio tempore tempora fugit?'}
                   </p>
                  
                   </section>

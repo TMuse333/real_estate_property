@@ -166,10 +166,9 @@ id='profile'
 ) : (
     
     <section className="property-container ">
-    <Navbar/>
+    {/* <Navbar/> */}
 
-    <button onClick={handleCreatePage}
-     className="create-page-button">
+    <button className="create-page-button">
         createPage
     </button>
 

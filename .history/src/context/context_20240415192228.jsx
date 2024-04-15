@@ -12,9 +12,7 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
 
   const value = {
     createPageClicked,
-    setCreatePageClicked,
-    inputVariant,
-    setInputVariant
+    setCreatePageClicked
   }
 
   return (

@@ -53,7 +53,7 @@
 .hydro-input{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: spa;
     align-items: center;
     margin-top: 5rem;
     ;
@@ -74,8 +74,6 @@ outline: none;
 
 .input-element{
     display: flex;
-    width: 80vw;
-    justify-content: space-around;
 
 }
 

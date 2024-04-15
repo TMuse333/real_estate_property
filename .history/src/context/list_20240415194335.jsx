@@ -56,7 +56,6 @@ export const ListProvider = ({ children }) => {
     setInputListLength,
     inputVariant,
     setInputVariant,
-    handleDescriptionChange
   };
 
   return (

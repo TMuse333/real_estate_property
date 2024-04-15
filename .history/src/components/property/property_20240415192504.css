@@ -115,9 +115,7 @@ text-align: center;
 }
 
 .create-page-button{
-    position: fixed;
-    top:50%;
-    right:0;
+    pos
 }
 
 @media screen and (min-width:655px){

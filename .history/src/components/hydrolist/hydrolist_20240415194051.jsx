@@ -12,8 +12,7 @@ const HydroList = ({text,intro,inputVariant}) => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 865);
 
     const {inputListLength, setInputListLength,
-    handleInputChange,inputList, setInputList,
-  handleDescriptionChange} = useListContext()
+    handleInputChange,inputList, setInputList} = useListContext()
   
     const renderInputs = () => {
       return Array.from({ length: inputListLength }, (_, index) => (
@@ -34,12 +33,8 @@ const HydroList = ({text,intro,inputVariant}) => {
           </div>
     
           <section className="hydro-expanded hydro-expanded-input">
-          <textarea 
-  placeholder="Add the description here"
-  onChange={(e) => handleDescriptionChange(index, e.target.value)}
-  style={contentStyle(index)}
-></textarea>
-
+            <textarea  onChange={(e) => handleInputChange(index, e.target.value)}
+             placeholder="Add the description here" style={contentStyle(index)}></textarea>
           </section>
         </div>
       ));

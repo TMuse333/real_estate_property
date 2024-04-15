@@ -168,9 +168,8 @@ id='profile'
     <section className="property-container ">
     <Navbar/>
 
-    <button onClick={handleCreatePage}
-     className="create-page-button">
-        createPage
+    <button className="create-page-button">
+        cre
     </button>
 
     

@@ -39,16 +39,15 @@ const Property = ({propertyHerobanner,
   documents,
   factsList,
   profile,
-  
+  inputVariant
 
 
   }) => {
 
-    const {createPageClicked, setCreatePageClicked,
-    inputVariant, setInputVariant} = useAppContext()
+    const {createPageClicked, setCreatePageClicked} = useAppContext()
 
     const handleCreatePage = () => {
-       setInputVariant(false)
+        setCreatePageClicked(true)
     }
 
 
@@ -167,11 +166,6 @@ id='profile'
     
     <section className="property-container ">
     <Navbar/>
-
-    <button onClick={handleCreatePage}
-     className="create-page-button">
-        createPage
-    </button>
 
     
    
@@ -299,12 +293,12 @@ images={carouselImages2}/>
 <GoogleMaps/>
 
 <HydroList
-inputVariant={inputVariant}
+inputVariant={true}
 />
 
 <Profile
 id='profile'
-inputVariant={inputVariant}
+inputVariant={true}
 
 // profile={profile}
 />

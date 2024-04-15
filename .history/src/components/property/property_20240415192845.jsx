@@ -168,8 +168,7 @@ id='profile'
     <section className="property-container ">
     <Navbar/>
 
-    <button onClick={handleCreatePage}
-     className="create-page-button">
+    <button className="create-page-button">
         createPage
     </button>
 
@@ -299,12 +298,12 @@ images={carouselImages2}/>
 <GoogleMaps/>
 
 <HydroList
-inputVariant={inputVariant}
+inputVariant={true}
 />
 
 <Profile
 id='profile'
-inputVariant={inputVariant}
+inputVariant={true}
 
 // profile={profile}
 />

@@ -39,16 +39,15 @@ const Property = ({propertyHerobanner,
   documents,
   factsList,
   profile,
-  
+  inputVariant
 
 
   }) => {
 
-    const {createPageClicked, setCreatePageClicked,
-    inputVariant, setInputVariant} = useAppContext()
+    const {createPageClicked, setCreatePageClicked} = useAppContext()
 
     const handleCreatePage = () => {
-       setInputVariant(false)
+        setCreatePageClicked(true)
     }
 
 
@@ -168,11 +167,6 @@ id='profile'
     <section className="property-container ">
     <Navbar/>
 
-    <button onClick={handleCreatePage}
-     className="create-page-button">
-        createPage
-    </button>
-
     
    
     <div className="property-herobanner"
@@ -265,10 +259,6 @@ placeholder=" Enter end  time and date of open house">
         </section>
 
        <button className="create-page-button"
-       onClick={handleCreatePage}>
-        Create page
-
-       </button>
 
         <ProductCarousel
         horizontal={true}
@@ -299,12 +289,12 @@ images={carouselImages2}/>
 <GoogleMaps/>
 
 <HydroList
-inputVariant={inputVariant}
+inputVariant={true}
 />
 
 <Profile
 id='profile'
-inputVariant={inputVariant}
+inputVariant={true}
 
 // profile={profile}
 />

@@ -8,13 +8,10 @@ const AppContext = createContext();
 export const AppProvider = ({ children, numberOfCarousels }) => {
   // Define your general context variables here
   const [createPageClicked, setCreatePageClicked] = useState(false);
-  const [inputVariant, setInputVariant] = useState(true)
 
   const value = {
     createPageClicked,
-    setCreatePageClicked,
-    inputVariant,
-    setInputVariant
+    setreatePageClicked
   }
 
   return (
@@ -22,7 +19,7 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
       <ProfileProvider>
         <ImageProvider numberOfCarousels={numberOfCarousels}>
           {/* Include general context variables in the context value */}
-          <AppContext.Provider value={value}>
+          <AppContext.Provider value={{ generalVariable, setGeneralVariable }}>
             {children}
           </AppContext.Provider>
         </ImageProvider>
