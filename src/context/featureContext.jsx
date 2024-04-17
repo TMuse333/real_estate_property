@@ -12,6 +12,19 @@ export const FeatureProvider = ({ children }) => {
 
     const [featureList, setFeatureList] = useState([])
 
+    const [amenitiesList, setAmenitiesList] = useState([])
+
+    const [amenityListLength, setAmenityListLength] = useState(0)
+
+    const addAmenity = (index, value) => {
+      setAmenitiesList((prevList) => {
+        const newList = [...prevList]; // Create a copy of the previous list
+        newList[index] = value; // Update the value at the specified index
+        return newList; // Return the updated list
+      });
+    };
+    
+
     const handleInputChange = (index, value, image) => {
   // Create a new feature object with the input value
       const newFeature = { name: value, };
@@ -27,22 +40,12 @@ export const FeatureProvider = ({ children }) => {
       });
   };
 
-  useEffect(()=>{
-  if(featureList[1]){
-    console.log('feature list name exists')
-  }
-  else{
-    console.log('list doesnt exist yet')
-  }
-  },[featureList])
+
 
 
   const handleAddFeatureImage = (index, value) => {
 
-    if(!featureList[index]){
-      window.alert('Please name your feature before placing the image')
-      return
-    }
+
 
     
     // Check if the feature object already exists at the specified index
@@ -69,14 +72,24 @@ export const FeatureProvider = ({ children }) => {
 //   setInputList(newList);
 // };
 
-
+useEffect(()=> {
+  console.log('the amenitites list',amenitiesList)
+},[amenitiesList])
 
    
     const contextValue = {
-            featureList,setFeatureListLength,
-            setFeatureList, featureListLength,
+            featureList,
+            setFeatureListLength,
+            setFeatureList,
+            featureListLength,
             handleInputChange,
-            handleAddFeatureImage
+            handleAddFeatureImage,
+            amenitiesList,
+            amenityListLength,
+            setAmenitiesList,
+            setAmenityListLength,
+            addAmenity
+
     }
 
     useEffect(()=> {

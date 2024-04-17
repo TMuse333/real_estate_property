@@ -223,6 +223,7 @@ placeholder=" Enter end  time and date of open house">
         </textarea>
 
          <Features
+         inputVariant={inputVariant}
         //  {...featureAttributes}
          />
 

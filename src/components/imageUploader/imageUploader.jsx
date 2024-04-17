@@ -25,6 +25,11 @@ isFeatureImage
   const handleDrop = (event) => {
     event.preventDefault();
 
+        if(isFeatureImage && !featureList[featureIndex] ){
+          window.alert('Please name your feature before placing the image')
+          return
+        }
+
     // Access the dropped files from the event
     const files = event.dataTransfer.files;
 
@@ -53,10 +58,7 @@ isFeatureImage
   // Function to handle onChange event of the file input
   const handleFileInputChange = (e) => {
 
-    if(isFeatureImage ){
-      console.log('feature rage')
-      return
-    }
+
 
 
 
