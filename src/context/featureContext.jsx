@@ -13,10 +13,8 @@ export const FeatureProvider = ({ children }) => {
     const [featureList, setFeatureList] = useState([])
 
     const handleInputChange = (index, value, image) => {
-
-      console.log('image added!!')
-      // Create a new feature object with the input value
-      const newFeature = { name: value, image:image };
+  // Create a new feature object with the input value
+      const newFeature = { name: value, };
 
       // Update the featureList state with the new feature object
       setFeatureList(prevList => {
@@ -30,15 +28,24 @@ export const FeatureProvider = ({ children }) => {
   };
 
 
-  const handleAddImage = (index, value) => {
-    // Create a new feature object with the input value
-    const newFeature = { image: value };
-
-    const newList = [...featureList];
-  newList[index] = { ...newList[index], description: newFeature };
-  setFeatureList(newList);
-   
+  const handleAddFeatureImage = (index, value) => {
+    // Check if the feature object already exists at the specified index
+    if (featureList[index]) {
+        // If the object exists, update it with the image and existing name
+        const newFeature = { ...featureList[index], image: value };
+        const newList = [...featureList];
+        newList[index] = newFeature;
+        setFeatureList(newList);
+    } else {
+        // If the object doesn't exist, create a new one with the image and name
+        const newFeature = { name: featureList[index].name || null, image: value };
+        const newList = [...featureList];
+        newList[index] = newFeature;
+        setFeatureList(newList);
+    }
 };
+
+
 
 // const handleDescriptionChange = (index, value) => {
 //   const newList = [...inputList];
@@ -53,7 +60,7 @@ export const FeatureProvider = ({ children }) => {
             featureList,setFeatureListLength,
             setFeatureList, featureListLength,
             handleInputChange,
-            handleAddImage
+            handleAddFeatureImage
     }
 
     useEffect(()=> {

@@ -4,13 +4,17 @@ import './imageUploader.css';
 import placeholder from '../../media/place-holder.jpg'
 import { useContext } from 'react';
 import kakashi from '../../media/kakashi_susanoo.jpg'
+import { useFeatureContext } from '../../context/featureContext';
 
 const ImageUploader = ({ multiple, inputName, setterFunction, isProfileImage,
-isFeatureImage}) => {
+isFeatureImage
+,featureIndex}) => {
 
   const [droppedImages, setDroppedImages] = useState([]);
 
   const {profileImage, setProfileImage} = useImageContext()
+
+ const {handleAddFeatureImage} = useFeatureContext()
   
   // Prevent default behavior for dragover and drop events
   const handleDragOver = (event) => {
@@ -76,7 +80,7 @@ isFeatureImage}) => {
       // console.log('slat')
       
     }
-    console.log('setter function called!')
+ 
   }, [droppedImages]);
 
   useEffect(()=> {
@@ -85,6 +89,16 @@ isFeatureImage}) => {
       // console.log('the profile src is',profileImage)
     }
   },[droppedImages])
+
+  useEffect(() => {
+    if (isFeatureImage) {
+      handleAddFeatureImage(featureIndex,droppedImages[droppedImages.length-1]); // Call addFeatureImage function when isFeatureImage is true
+      console.log('adding le feature');
+    }
+  }, [droppedImages]); // Include addFeatureImage as a dependency
+  
+
+
 
   const uploaderClassName = isProfileImage ? "profile-image-uploader" : !isFeatureImage ? "image-uploader" : 
   'image-uploader no-padding';

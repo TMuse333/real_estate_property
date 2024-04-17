@@ -12,7 +12,7 @@ const Features = ({ name, price, address, featuresName, featureImage, amenities,
 
     const {featureList, featureListLength,
        setFeatureListLength,
-      handleInputChange,handleAddImage} = useFeatureContext()
+      handleInputChange,handleAddFeatureImage} = useFeatureContext()
 
     const handleAddFeature = () => {
         setFeatureListLength((prevLength)=>prevLength+1)
@@ -63,8 +63,10 @@ const Features = ({ name, price, address, featuresName, featureImage, amenities,
           onChange={(e) => handleInputChange(index, e.target.value)} 
           ></input>
           <ImageUploader
-          setterFunction={handleAddImage}
+          setterFunction={handleAddFeatureImage}
           isFeatureImage={true}
+        
+         featureIndex={index}
           // multiple={true}
           />
         </div>
