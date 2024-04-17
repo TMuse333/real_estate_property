@@ -27,8 +27,24 @@ export const FeatureProvider = ({ children }) => {
       });
   };
 
+  useEffect(()=>{
+  if(featureList[1]){
+    console.log('feature list name exists')
+  }
+  else{
+    console.log('list doesnt exist yet')
+  }
+  },[featureList])
+
 
   const handleAddFeatureImage = (index, value) => {
+
+    if(!featureList[index]){
+      window.alert('Please name your feature before placing the image')
+      return
+    }
+
+    
     // Check if the feature object already exists at the specified index
     if (featureList[index]) {
         // If the object exists, update it with the image and existing name
@@ -38,7 +54,7 @@ export const FeatureProvider = ({ children }) => {
         setFeatureList(newList);
     } else {
         // If the object doesn't exist, create a new one with the image and name
-        const newFeature = { name: featureList[index].name || null, image: value };
+        const newFeature = { name: null, image: value };
         const newList = [...featureList];
         newList[index] = newFeature;
         setFeatureList(newList);

@@ -14,7 +14,7 @@ isFeatureImage
 
   const {profileImage, setProfileImage} = useImageContext()
 
- const {handleAddFeatureImage} = useFeatureContext()
+ const {handleAddFeatureImage,featureList} = useFeatureContext()
   
   // Prevent default behavior for dragover and drop events
   const handleDragOver = (event) => {
@@ -52,6 +52,15 @@ isFeatureImage
 
   // Function to handle onChange event of the file input
   const handleFileInputChange = (e) => {
+
+    if(isFeatureImage ){
+      console.log('feature rage')
+      return
+    }
+
+
+
+    
     const files = e.target.files;
     const fileList = Array.from(files);
     const readerPromises = fileList.map((file) => {
@@ -64,15 +73,24 @@ isFeatureImage
       });
     });
     // Set dropped images state with the resolved data URLs
+    
     Promise.all(readerPromises).then((imageURLs) => {
       setDroppedImages((prevImages) => [...prevImages, ...imageURLs]);
     });
+
+ 
 
     // Invoke the appropriate upload function based on the multiple prop
   };
 
   useEffect(() => {
-    if (multiple && droppedImages.length > 0 && setterFunction) {
+
+    if(isFeatureImage && !featureList[featureIndex]){
+      console.log('returning')
+      return
+    }
+
+    else if (multiple && droppedImages.length > 0 && setterFunction) {
       setterFunction((imageArray) => [...imageArray, droppedImages[droppedImages.length -1]]);
 
     } else if (!multiple && droppedImages.length > 0 && setterFunction) {
@@ -91,11 +109,11 @@ isFeatureImage
   },[droppedImages])
 
   useEffect(() => {
-    if (isFeatureImage) {
+    if (isFeatureImage && droppedImages.length >0 &&featureList[featureIndex]) {
       handleAddFeatureImage(featureIndex,droppedImages[droppedImages.length-1]); // Call addFeatureImage function when isFeatureImage is true
       console.log('adding le feature');
     }
-  }, [droppedImages]); // Include addFeatureImage as a dependency
+  }, [droppedImages]); 
   
 
 
@@ -126,7 +144,7 @@ isFeatureImage
           </>
       
           
-        ) : !multiple && droppedImages.length > 0  && !isProfileImage? (
+        ) : !multiple && droppedImages.length > 0  && !isProfileImage ? (
           <>
               {/* For a single image  */}
             <div className={isFeatureImage ? `feature-image-preview` : 'image-preview'}>
