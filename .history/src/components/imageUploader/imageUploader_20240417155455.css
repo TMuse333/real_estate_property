@@ -1,0 +1,72 @@
+.uploaded-image{
+    height:30vh;
+}
+
+.image-uploader {
+    max-width: 400px; /* Set a maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; 
+    /* border: 2px dashed #ccc;  */
+    text-align: center; /* Center align the text */
+    /* background-color: #00bfff; */
+    width:20vw;
+  }
+  
+  .no-padding{
+    padding:0;
+  }
+  .image-uploader-container label {
+    cursor: pointer; /* Change cursor to pointer when hovering over the label */
+  }
+  
+  .image-uploader-container img {
+    max-width: 100%; /* Make sure the image fits within the container */
+    margin-top: 20px; /* Add some space between the label and the image */
+  }
+
+  .image-preview img{
+    height:100px;
+    object-fit: cover;
+    height:40vh;
+  }
+
+  .import-image{
+    display: flex;
+  
+    flex-direction: column;
+  }
+
+  .image-preview {
+    /* height:100px; */
+    object-fit: cover;
+    height:40vh;
+    width:30vw;
+  }
+
+  .feature-image-preview{
+    height:5vw;
+    width:5vw;
+  }
+
+  .import-image input{
+    margin-top: 1rem;
+    margin:1rem auto 0rem auto;
+    
+  }
+
+
+
+  .profile-image-uploader{
+    background-color: rgb(31, 28, 28);
+    height:40vh;
+    position: absolute;
+    transform: translateX(-50%);
+    left:50%;
+    display: flex;
+
+    justify-content: center;
+
+  }
+
+
+  
