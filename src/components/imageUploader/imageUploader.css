@@ -5,11 +5,12 @@
 .image-uploader {
     max-width: 400px; /* Set a maximum width */
     margin: 0 auto; /* Center the container horizontally */
-    padding: 20px; 
+    /* padding: 20px;  */
     /* border: 2px dashed #ccc;  */
     text-align: center; /* Center align the text */
     /* background-color: #00bfff; */
     width:20vw;
+    /* margin-right: auto; */
   }
   
   .no-padding{

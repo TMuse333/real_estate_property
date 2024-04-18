@@ -85,7 +85,7 @@ const {propertyLocation, propertyPrice,propertyTitle} = usePropertyContext()
           setterFunction={handleAddFeatureImage}
           isFeatureImage={true}
         
-         featureIndex={index}
+          arrayIndex={index}
           // multiple={true}
           />
         </div>

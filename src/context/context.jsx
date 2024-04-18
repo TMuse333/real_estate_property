@@ -4,6 +4,7 @@ import { ImageProvider } from "./imageContext";
 import { ListProvider } from "./list";
 import { FeatureProvider } from "./featureContext";
 import { PropertyProvider } from "./propertyContext";
+import { DocumentProvider } from "./documentContext";
 
 const AppContext = createContext();
 
@@ -20,9 +21,10 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
   }
 
   return (
+    <DocumentProvider>
+
+
     <PropertyProvider>
-
-
     <FeatureProvider>
     <ListProvider>
       <ProfileProvider>
@@ -36,6 +38,7 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
     </ListProvider>
     </FeatureProvider>
     </PropertyProvider>
+    </DocumentProvider>
   );
 };
 

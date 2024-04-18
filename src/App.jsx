@@ -8,6 +8,7 @@ import CreatePage from './components/createPage/createPage';
 import { ImageProvider } from './context/imageContext';
 import { AppProvider } from './context/context';
 import Features from './components/features/features';
+import Documents from './components/documents/documents';
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
        </Route>
 
        <Route path='input-variant'
-       element={<Features
+       element={<Documents
       inputVariant={true}
       />}
       >

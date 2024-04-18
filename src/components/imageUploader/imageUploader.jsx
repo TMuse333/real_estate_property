@@ -6,16 +6,24 @@ import { useContext } from 'react';
 import kakashi from '../../media/kakashi_susanoo.jpg'
 import { useFeatureContext } from '../../context/featureContext';
 import { useProfileContext } from '../../context/profileContext';
+import { useDocumentContext } from '../../context/documentContext';
 
 const ImageUploader = ({ multiple, inputName, setterFunction, isProfileImage,
-isFeatureImage
-,featureIndex}) => {
+isFeatureImage ,isDocumentImage, 
+arrayIndex
+}) => {
+
+  //to make the code simpler i will have to add a general prop
+  //for the styling of the input box, which will be the styling of the
+  //specified object that i am putting input for
 
   const [droppedImages, setDroppedImages] = useState([]);
 
   const {profileImage, setProfileImage} = useProfileContext()
 
  const {handleAddFeatureImage,featureList} = useFeatureContext()
+
+ const {handleDocumentChange,documentList} = useDocumentContext()
   
   // Prevent default behavior for dragover and drop events
   const handleDragOver = (event) => {
@@ -26,7 +34,7 @@ isFeatureImage
   const handleDrop = (event) => {
     event.preventDefault();
 
-        if(isFeatureImage && !featureList[featureIndex] ){
+        if(isFeatureImage && !featureList[arrayIndex] ){
           window.alert('Please name your feature before placing the image')
           return
         }
@@ -88,7 +96,7 @@ isFeatureImage
 
   useEffect(() => {
 
-    if(isFeatureImage && !featureList[featureIndex]){
+    if(isFeatureImage && !featureList[arrayIndex]){
       console.log('returning')
       return
     }
@@ -112,16 +120,21 @@ isFeatureImage
   },[droppedImages])
 
   useEffect(() => {
-    if (isFeatureImage && droppedImages.length >0 &&featureList[featureIndex]) {
-      handleAddFeatureImage(featureIndex,droppedImages[droppedImages.length-1]); // Call addFeatureImage function when isFeatureImage is true
+    if (isFeatureImage && droppedImages.length >0 &&featureList[arrayIndex]) {
+      handleAddFeatureImage(arrayIndex,droppedImages[droppedImages.length-1]); // Call addFeatureImage function when isFeatureImage is true
       console.log('adding le feature');
+      
+    }
+
+    else if (isDocumentImage && droppedImages.length >0 && documentList[arrayIndex]){
+      handleDocumentChange(arrayIndex,'image',droppedImages[droppedImages.length-1])
     }
   }, [droppedImages]); 
   
 
 
 
-  const uploaderClassName = isProfileImage ? "profile-image-uploader" : !isFeatureImage ? "image-uploader" : 
+  const uploaderClassName = isProfileImage ? "profile-image-uploader" : !isFeatureImage  ? "image-uploader" : 
   'image-uploader no-padding';
 
   const style = {
@@ -154,7 +167,7 @@ isFeatureImage
               <img src={droppedImages[droppedImages.length - 1]} alt="Single dropped image" />
             </div>
 
-            {!isFeatureImage && (
+            {!isFeatureImage || !isDocumentImage && (
 
            <>
             <p>Drag and drop images here or click to upload {inputName}</p>
@@ -179,7 +192,7 @@ isFeatureImage
 
         {!isProfileImage && (
           <>
-          {!isFeatureImage && (
+          {!isFeatureImage ||!isDocumentImage && (
            
  <p>Drag and drop images here or click to upload {inputName}</p>
  )}

@@ -1,5 +1,7 @@
 import React, {useState} from "react";
+import { useDocumentContext } from "../../context/documentContext";
 import img from '../../media/place-holder.jpg';
+import ImageUploader from "../imageUploader/imageUploader";
 import './document.css'
 
 const Documents = ({document,inputVariant}) => {
@@ -19,6 +21,13 @@ const Documents = ({document,inputVariant}) => {
         },
         // Add more placeholder data as needed
       ];
+
+      const {documentListLength, setDocumentList, setDocumentListLength,
+    documentList,handleDocumentChange} = useDocumentContext()
+
+    const handleAddDocumentClick = () => {
+        setDocumentListLength((prevLength) => prevLength + 1)
+    }
     
       // Use the document prop if provided, otherwise use placeholder data
       const documents = document ? document : placeholderData;
@@ -62,7 +71,36 @@ console.log('top',top)
         }
     }
 
-  
+        const renderDocuments = () => {
+            return Array.from({length:documentListLength},(_,index) => (
+                <div className="document"
+                key={index}>
+                    <input
+                    onChange={(e)=>handleDocumentChange(index,'name',e.target.value)}
+                    placeholder='Enter name of Document Here'>
+
+                    </input>
+                    <ImageUploader
+                    isDocumentImage={true}
+                    arrayIndex={index}/>
+                    <input  onChange={(e)=>handleDocumentChange(index,'description',e.target.value)}
+                    placeholder='Enter Description of Document Here'
+                    >
+                    </input>
+                    <input  onChange={(e)=>handleDocumentChange(index,'link',e.target.value)}
+                    placeholder='Enter a link to the document Document Here'
+                    >
+                    </input>
+
+                    <button>
+                        Save Document
+                    </button>
+                    
+                    
+
+                </div>
+            ))
+        }
 
 
     return (
@@ -82,7 +120,7 @@ console.log('top',top)
             </p>
 
             <div className="documents-grid">
-                {documents.map((document, index) => (
+                {documentList.map((document, index) => (
                     <div className="document"
                     key={index}
                     onMouseEnter={()=>handleDocHover(index)}
@@ -93,11 +131,7 @@ console.log('top',top)
                         <img src={document.image}/>
                         <p>{document.name}</p>
                         </div>
-                        {/* <div className="document-details"
-            style={detailsStyle(index)}>
-                <h2>Le Document</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, harum. Omnis autem aspernatur magnam error sit neque itaque velit laboriosam.</p>
-            </div> */}
+    
                         </div>
                 ))}
             </div>
@@ -112,26 +146,14 @@ console.log('top',top)
                     <p className="main-description-p">
                         Drag and drop important documents here
                     </p>
+
+                    <button onClick={handleAddDocumentClick}
+                    >
+                        Add Document
+                    </button>
         
                     <div className="documents-grid">
-                        {documents.map((document, index) => (
-                            <div className="document"
-                            key={index}
-                            onMouseEnter={()=>handleDocHover(index)}
-                            onMouseLeave={()=>handleMouseLeave()}
-                            style={docStyle(index)}>
-                                <div>
-                                 
-                                <img src={document.image}/>
-                                <p>{document.name}</p>
-                                </div>
-                                {/* <div className="document-details"
-                    style={detailsStyle(index)}>
-                        <h2>Le Document</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, harum. Omnis autem aspernatur magnam error sit neque itaque velit laboriosam.</p>
-                    </div> */}
-                                </div>
-                        ))}
+                      {renderDocuments()}
                     </div>
                 </section>
             )}

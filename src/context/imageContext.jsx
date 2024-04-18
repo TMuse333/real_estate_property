@@ -17,8 +17,8 @@ export const ImageProvider = ({children, numberOfCarousels}) => {
 
     const [createPageClicked, setCreatePageClicked] = useState(false)
 
-       const initialSliderImages = Array.from({ length: numberOfCarousels }, () => []);
-const [sliderImages, setSliderImages] = useState(initialSliderImages);
+    const initialSliderImages = Array.from({ length: numberOfCarousels }, () => []);
+    const [sliderImages, setSliderImages] = useState(initialSliderImages);
 
     const contextValue = {
         propertyHerobanner,
