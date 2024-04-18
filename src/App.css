@@ -46,7 +46,7 @@
   /* height:100vh; */
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, #331c00, #4f2816);
+  background: linear-gradient(to right, #0e0800, #000000);
 
   justify-content: center;
   position: absolute;

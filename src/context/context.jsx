@@ -3,6 +3,7 @@ import { ProfileProvider } from "./profileContext";
 import { ImageProvider } from "./imageContext";
 import { ListProvider } from "./list";
 import { FeatureProvider } from "./featureContext";
+import { PropertyProvider } from "./propertyContext";
 
 const AppContext = createContext();
 
@@ -19,6 +20,9 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
   }
 
   return (
+    <PropertyProvider>
+
+
     <FeatureProvider>
     <ListProvider>
       <ProfileProvider>
@@ -31,6 +35,7 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
       </ProfileProvider>
     </ListProvider>
     </FeatureProvider>
+    </PropertyProvider>
   );
 };
 

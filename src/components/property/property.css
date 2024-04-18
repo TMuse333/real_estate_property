@@ -11,7 +11,7 @@
     left:0;
     text-align: center;
     width:100vw;
-    background: linear-gradient(to right, #331c00, #4f2816);
+    background: linear-gradient(to right, #080400, #150a06);
     
     
 
@@ -46,8 +46,7 @@
 
 .property-hero{
     width:100vw;
-    /* max-height: 800px; */
-    /* height:80vh; */
+ 
     object-fit: cover;
     max-width: 1000px;
     margin: 0 auto;

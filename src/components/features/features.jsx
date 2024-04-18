@@ -5,6 +5,7 @@ import {FaCheck} from 'react-icons/fa'
 import { useFeatureContext } from "../../context/featureContext";
 
 import ImageUploader from "../imageUploader/imageUploader";
+import { usePropertyContext } from "../../context/propertyContext";
 const Features = ({ name, price, address, featuresName, featureImage, amenities,inputVariant }) => {
     // Initialize featuresList
     let featuresList = [];
@@ -22,6 +23,8 @@ const Features = ({ name, price, address, featuresName, featureImage, amenities,
       amenityListLength,
       addAmenity
 } = useFeatureContext()
+
+const {propertyLocation, propertyPrice,propertyTitle} = usePropertyContext()
 
     const handleAddFeature = () => {
         setFeatureListLength((prevLength)=>prevLength+1)
@@ -111,9 +114,9 @@ const Features = ({ name, price, address, featuresName, featureImage, amenities,
 
       <section className="amenities-container"
       id='price-and-features'>
-        <h1>{name || 'property name'}</h1>
-        <h3>{address || 'address name'}</h3>
-        <h2><strong>For sale:</strong> {price || '1,000, 000'}</h2>
+        <h1>{propertyTitle || 'property name'}</h1>
+        <h3>{propertyLocation || 'address name'}</h3>
+        <h2><strong>For sale:</strong> {propertyPrice || '1,000, 000'}</h2>
   
         <div className="features-grid">
           {featureList.map((feature, index) => (

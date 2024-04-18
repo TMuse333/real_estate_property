@@ -20,42 +20,59 @@ import { hydroText } from "../../data/data";
 import { useEffect } from "react";
 import ImageUploader from "../imageUploader/imageUploader";
 import { useAppContext } from "../../context/context";
+import { usePropertyContext } from "../../context/propertyContext";
 
 
 
 
 
 const Property = ({propertyHerobanner,
-  propertyPrice, propertyOpeningDate,
-  propertyClosingDate,
-  propertyMainDescription,
-  propertyDescription2,
-  propertyDescription3,
-  propertyVideo,
-
-  featureAttributes, 
-  sliderImages, carouselImages1,
+  documents,carouselImages1,
   carouselImages2,
-  documents,
-  factsList,
-  profile,
-  
+  sliderImages
+  ,propertyVideo
 
 
   }) => {
 
+
+    const {
+        propertyTitle,
+        setPropertyTitle,
+        propertyLocation,
+        setPropertyLocation,
+        propertyPrice,
+        setPropertyPrice,
+        propertyOpeningDate,
+        setPropertyOpeningDate,
+        propertyClosingDate,
+        setPropertyClosingDate,
+        propertyDescription1,
+        setPropertyDescription1,
+        propertyTitle2,
+        setPropertyTitle2,
+        propertyDescription2,
+        setPropertyDescription2,
+        propertyTitle3,
+        setPropertyTitle3,
+        propertyDescription3,
+        setPropertyDescription3,
+        handleInputChange
+      } = usePropertyContext() 
+
     const {createPageClicked, setCreatePageClicked,
     inputVariant, setInputVariant} = useAppContext()
+
+
+
+
 
     const handleCreatePage = () => {
        setInputVariant(false)
     }
 
 
-// useEffect(()=>{
-//     console.log('the property herobanner is',
-//     propertyHerobanner)
-// },[propertyHerobanner])
+
  
     return (
 
@@ -72,8 +89,8 @@ const Property = ({propertyHerobanner,
             <div className="property-herobanner"
             id='home'>
 
-                <h1>A lovely Rooftight Home</h1>
-                <h2>Bedford, Nova Scotia</h2>
+                <h1>{propertyTitle}</h1>
+                <h2>{propertyLocation}</h2>
 
        
             <img className="property-hero"
@@ -86,9 +103,9 @@ const Property = ({propertyHerobanner,
  </p>
            
                  </div>
-                 <h1 id='description'>Property Description</h1>
+                 <h1 id='description'>{propertyTitle}</h1>
                  <p className="main-description-p">
-                    {propertyMainDescription ||
+                    {propertyDescription1 ||
                     'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas et ad, similique nobis molestias ullam alias? Beatae suscipit expedita nobis nulla inventore incidunt eaque molestias ipsum repudiandae reprehenderit. Asperiores, laborum?'}
                  </p>
 
@@ -117,7 +134,7 @@ const Property = ({propertyHerobanner,
                 id='more-info'>
 
 
-                 <h1>Title Here</h1>
+                 <h1>{propertyTitle2}</h1>
                  <p className="main-description-p">{propertyDescription2 || 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, quis dolorem illo, quasi debitis dolore exercitationem reprehenderit culpa impedit officiis explicabo unde, ab fugiat. Maxime reiciendis quae possimus voluptates repellat facilis eum delectus libero magni quod vero modi iusto officiis alias, excepturi, odio animi voluptatum nulla dolorum illo ratione unde.'}</p>
                 </section>
 
@@ -131,7 +148,7 @@ const Property = ({propertyHerobanner,
 <section className="title-paragraph-container">
 
 
-<h1>Title Here</h1>
+<h1>{propertyTitle3}</h1>
 <p className="main-description-p">{propertyDescription3 || 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, quis dolorem illo, quasi debitis dolore exercitationem reprehenderit culpa impedit officiis explicabo unde, ab fugiat. Maxime reiciendis quae possimus voluptates repellat facilis eum delectus libero magni quod vero modi iusto officiis alias, excepturi, odio animi voluptatum nulla dolorum illo ratione unde.'}</p>
 </section>
 
@@ -147,7 +164,7 @@ images={carouselImages2}/>
 
 <HydroList
 
-text={factsList}/>
+/>
 
 <Profile
 id='profile'
@@ -183,8 +200,10 @@ id='profile'
    
 
         <input className="h1-input input"
+        onChange={(e)=>handleInputChange(e.target.value,setPropertyTitle)}
         placeholder="Enter title here"></input>
-       <input className="h2-input input"
+       <input  onChange={(e)=>handleInputChange(e.target.value,setPropertyLocation)}
+       className="h2-input input"
        placeholder="Enter Location Here">
 
        </input>
@@ -194,6 +213,7 @@ id='profile'
  <ImageUploader/>
  <div className="input-stack">
 <input className="h2-input input"
+ onChange={(e)=>handleInputChange(e.target.value,setPropertyPrice)}
 placeholder="Enter Price Here">
 
 </input>
@@ -205,11 +225,15 @@ placeholder="Enter Price Here">
 
 
 <input className="p-input input"
-placeholder=" Enter starting date of open house">
+placeholder=" Enter starting date of open house"
+onChange={(e)=>handleInputChange(e.target.value,setPropertyOpeningDate)}
+>
    
 </input>
 <input className="p-input input"
-placeholder=" Enter end  time and date of open house">
+placeholder=" Enter end  time and date of open house"
+onChange={(e)=>handleInputChange(e.target.value,setPropertyClosingDate)}
+>
    
 </input>
 </div>
@@ -218,6 +242,7 @@ placeholder=" Enter end  time and date of open house">
          </div>
          <h1 id='description'>Property Description</h1>
         <textarea className="description-input input"
+        onChange={(e)=>handleInputChange(e.target.value,setPropertyDescription1)}
         placeholder="enter a description of your property here">
 
         </textarea>
@@ -254,11 +279,14 @@ placeholder=" Enter end  time and date of open house">
         id='more-info'>
 
 
-        <input className="h1-input input">
+        <input className="h1-input input"
+        placeholder="enter title"
+        onChange={(e)=>handleInputChange(e.target.value,setPropertyTitle2)}>
         </input>
 
   
          <textarea className="description-input input"
+         onChange={(e)=>handleInputChange(e.target.value,setPropertyDescription2)}
         placeholder="enter a description of your property here">
 
         </textarea>
@@ -280,11 +308,13 @@ placeholder=" Enter end  time and date of open house">
 
 
 <input className="h1-input input"
-placeholder=" your title here">
+placeholder=" your title here"
+onChange={(e)=>handleInputChange(e.target.value,setPropertyTitle3)}>
 
 </input>
 <textarea className="description-input input"
-        placeholder="enter a description of your property here">
+        placeholder="enter a description of your property here"
+        onChange={(e)=>handleInputChange(e.target.value,setPropertyDescription3)}>
 
         </textarea>
 </section>

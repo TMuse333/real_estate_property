@@ -5,6 +5,7 @@ import placeholder from '../../media/place-holder.jpg'
 import { useContext } from 'react';
 import kakashi from '../../media/kakashi_susanoo.jpg'
 import { useFeatureContext } from '../../context/featureContext';
+import { useProfileContext } from '../../context/profileContext';
 
 const ImageUploader = ({ multiple, inputName, setterFunction, isProfileImage,
 isFeatureImage
@@ -12,7 +13,7 @@ isFeatureImage
 
   const [droppedImages, setDroppedImages] = useState([]);
 
-  const {profileImage, setProfileImage} = useImageContext()
+  const {profileImage, setProfileImage} = useProfileContext()
 
  const {handleAddFeatureImage,featureList} = useFeatureContext()
   

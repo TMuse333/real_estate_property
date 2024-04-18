@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import img from '../../media/place-holder.jpg';
 import './document.css'
 
-const Documents = ({document}) => {
+const Documents = ({document,inputVariant}) => {
 
     const placeholderData = [
         {
@@ -66,6 +66,12 @@ console.log('top',top)
 
 
     return (
+
+        <>
+
+        {!inputVariant ? (
+
+    
         <section className="documents-container"
         id='documents'>
 
@@ -96,6 +102,40 @@ console.log('top',top)
                 ))}
             </div>
         </section>
+
+            ) : (
+                <section className="documents-container"
+                id='documents'>
+        
+                 
+                    <h1>Insert your documents here</h1>
+                    <p className="main-description-p">
+                        Drag and drop important documents here
+                    </p>
+        
+                    <div className="documents-grid">
+                        {documents.map((document, index) => (
+                            <div className="document"
+                            key={index}
+                            onMouseEnter={()=>handleDocHover(index)}
+                            onMouseLeave={()=>handleMouseLeave()}
+                            style={docStyle(index)}>
+                                <div>
+                                 
+                                <img src={document.image}/>
+                                <p>{document.name}</p>
+                                </div>
+                                {/* <div className="document-details"
+                    style={detailsStyle(index)}>
+                        <h2>Le Document</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, harum. Omnis autem aspernatur magnam error sit neque itaque velit laboriosam.</p>
+                    </div> */}
+                                </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+        </>
     )
 }
 

@@ -2,6 +2,8 @@
     height:40vh;
     background-color: grey;
    border-radius: 1rem;
+   max-width: 180px;
+   object-fit: cover;
 }
 
 .profile-container{
