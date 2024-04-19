@@ -10,8 +10,11 @@ export const ImageProvider = ({children, numberOfCarousels}) => {
     const [propertyHerobanner, setPropertyHerobanner] = useState(null)
 
 
+    const [droppedImages, setDroppedImages] = useState([])
 
-
+    useEffect(()=> {
+        console.log('dropped images',droppedImages)
+    },[droppedImages])
 
 
 
@@ -28,6 +31,8 @@ export const ImageProvider = ({children, numberOfCarousels}) => {
        
         createPageClicked,
         setCreatePageClicked,
+        droppedImages,
+        setDroppedImages
        
         
     }

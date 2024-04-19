@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Homepage from './components/homepage/homepage';
 import Property from './components/property/property';
 import NewPage from './components/newPage/newPage';
-import CreatePage from './components/createPage/createPage';
+
 import { ImageProvider } from './context/imageContext';
 import { AppProvider } from './context/context';
 import Features from './components/features/features';
@@ -33,11 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Property />} />
         {/* <Route path="/property" element={<Property />} /> */}
-        <Route path='create-page'
-        element={<CreatePage/>}>
-
-        </Route>
-       
+     
        <Route path='create-property'
        element={<Property
        inputVariant={true}/>}>

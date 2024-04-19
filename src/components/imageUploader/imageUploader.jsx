@@ -17,13 +17,19 @@ arrayIndex, className
   //for the styling of the input box, which will be the styling of the
   //specified object that i am putting input for
 
-  const [droppedImages, setDroppedImages] = useState([]);
+  // const {droppedImages, setDroppedImages} = useImageContext()
+
+  const [droppedImages, setDroppedImages] = useState([])
 
   const {profileImage, setProfileImage} = useProfileContext()
 
  const {handleAddFeatureImage,featureList} = useFeatureContext()
 
  const {handleDocumentChange,documentList} = useDocumentContext()
+
+
+
+
   
   // Prevent default behavior for dragover and drop events
   const handleDragOver = (event) => {
@@ -36,6 +42,10 @@ arrayIndex, className
 
         if(isFeatureImage && !featureList[arrayIndex] ){
           window.alert('Please name your feature before placing the image')
+          return
+        }
+
+        else if(!multiple && droppedImages.length === 1){
           return
         }
 
@@ -94,33 +104,19 @@ arrayIndex, className
     // Invoke the appropriate upload function based on the multiple prop
   };
 
+ 
+  const [firstImageDropped, setFirstImageDropped] = useState(false);
+ 
+
   useEffect(() => {
 
-    if(isFeatureImage && !featureList[arrayIndex]){
-      console.log('returning')
-      return
-    }
-
-    else if (multiple && droppedImages.length > 0 && setterFunction) {
-      setterFunction((imageArray) => [...imageArray, droppedImages[droppedImages.length -1]]);
-
-    } else if (!multiple && droppedImages.length > 0 && setterFunction) {
-      setterFunction(droppedImages[0]);
-      // console.log('slat')
-      
-    }
- 
-  }, [droppedImages]);
-
-  useEffect(()=> {
     if(isProfileImage && droppedImages.length > 0){
       setProfileImage(droppedImages[0])
       // console.log('the profile src is',profileImage)
     }
-  },[droppedImages])
 
-  useEffect(() => {
-    if (isFeatureImage && droppedImages.length >0 &&featureList[arrayIndex]) {
+
+   else if (isFeatureImage && droppedImages.length >0 &&featureList[arrayIndex]) {
       handleAddFeatureImage(arrayIndex,droppedImages[droppedImages.length-1]); // Call addFeatureImage function when isFeatureImage is true
       console.log('adding le feature');
       
@@ -128,6 +124,11 @@ arrayIndex, className
 
     else if (isDocumentImage && droppedImages.length >0 && documentList[arrayIndex]){
       handleDocumentChange(arrayIndex,'image',droppedImages[droppedImages.length-1])
+    }
+
+    else if(setterFunction && !firstImageDropped){
+      setterFunction(droppedImages[0])
+      setFirstImageDropped(true)
     }
   }, [droppedImages]); 
   
@@ -145,76 +146,35 @@ arrayIndex, className
 
   return (
     <>
-
-    {/* For multiple images  */}
-      <div className={className || 'image-uploader'} onDragOver={handleDragOver} onDrop={handleDrop}
-      style={style}>
-        {multiple ? (
-          <>
-            {droppedImages.map((imageURL, index) => (
-              <div key={index} className="image-preview">
-                <img src={imageURL} alt={`Dropped ${index + 1}`} />
-              </div>
-            ))}
+      <div className={className || 'image-uploader'} onDragOver={handleDragOver} onDrop={handleDrop} style={style}>
+        {droppedImages.length > 0 ? (
+          // Render the first dropped image if multiple is not true
+          !multiple ? (
           
-          </>
-      
-          
-        ) : !multiple && droppedImages.length > 0  && !isProfileImage ? (
+              <img src={droppedImages[0]} alt="Single dropped image" />
+    
+          ) : (
+            // Render all dropped images if multiple is true
+            <>
+              {droppedImages.map((imageURL, index) => (
+                <div key={index} className="image-preview">
+                  <img src={imageURL} alt={`Dropped ${index + 1}`} />
+                </div>
+              ))}
+            </>
+          )
+        ) : (
+          // Render the file input if no image is uploaded
           <>
-              {/* For a single image  */}
-            <div className={isFeatureImage ? `feature-image-preview` : 'image-preview'}>
-              <img src={droppedImages[droppedImages.length - 1]} alt="Single dropped image" />
-            </div>
-
-            {!isFeatureImage || !isDocumentImage && (
-
-           <>
             <p>Drag and drop images here or click to upload {inputName}</p>
             <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
-            </>
-            )}
           </>
-        ) : isProfileImage ? (
-          <>
-
-              {/* For a profile image  */}
-          <div className='import-image'>
-
-     
-           <img src={droppedImages[0] ||placeholder}
-           className='image-preview'
-           />
-            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
-            </div>
-          </>
-        ) : null}
-
-        {!isProfileImage && (
-          <>
-          {!isFeatureImage ||!isDocumentImage && (
-           
- <p>Drag and drop images here or click to upload {inputName}</p>
- )}
-
- {droppedImages.length === 0 && (
-
-
-          
- <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
-
- )}
-
-
-
-          </>
-          
-
         )}
-         
       </div>
     </>
   );
+  
+  
 
         }
   

@@ -21,12 +21,14 @@ import { useEffect } from "react";
 import ImageUploader from "../imageUploader/imageUploader";
 import { useAppContext } from "../../context/context";
 import { usePropertyContext } from "../../context/propertyContext";
+import { useState } from "react";
+import { useImageContext } from "../../context/imageContext";
 
 
 
 
 
-const Property = ({propertyHerobanner,
+const Property = ({
   documents,carouselImages1,
   carouselImages2,
   sliderImages
@@ -64,7 +66,7 @@ const Property = ({propertyHerobanner,
     inputVariant, setInputVariant} = useAppContext()
 
 
-
+const {setPropertyHerobanner, propertyHerobanner } = useImageContext()
 
 
     const handleCreatePage = () => {
@@ -210,7 +212,10 @@ id='profile'
        </div>
 
 
- <ImageUploader/>
+ <ImageUploader
+ className='property-hero'
+ setterFunction={setPropertyHerobanner}
+ />
  <div className="input-stack">
 <input className="h2-input input"
  onChange={(e)=>handleInputChange(e.target.value,setPropertyPrice)}
@@ -325,7 +330,8 @@ horizontal={true}
 images={carouselImages2}/>
 
 <Documents
-{...documents}/>
+{...documents}
+inputVariant={inputVariant}/>
 
 <GoogleMaps/>
 

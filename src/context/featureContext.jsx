@@ -10,7 +10,12 @@ export const FeatureProvider = ({ children }) => {
 
     const [featureListLength, setFeatureListLength] = useState(0)
 
-    const [featureList, setFeatureList] = useState([])
+    const [featureList, setFeatureList] = useState([
+      {
+        name:'',
+        image:''
+      }
+    ])
 
     const [amenitiesList, setAmenitiesList] = useState([])
 
@@ -25,19 +30,24 @@ export const FeatureProvider = ({ children }) => {
     };
     
 
-    const handleInputChange = (index, value, image) => {
+    const handleFeatureChange = (index, attribute, value) => {
   // Create a new feature object with the input value
-      const newFeature = { name: value, };
+    const newList = [...featureList];
+    newList[index] = {
+      ...newList[index],
+      [attribute]:value
+    }
+    setFeatureList(newList)
+  };
 
-      // Update the featureList state with the new feature object
-      setFeatureList(prevList => {
-          // Copy the existing featureList array
-          const newList = [...prevList];
-          // Replace the item at the specified index with the new feature object
-          newList[index] = newFeature;
-          // Return the updated list
-          return newList;
-      });
+
+  const handleDocumentChange = (index, attribute, value) => {
+    const newList = [...documentList];
+    newList[index] = {
+      ...newList[index],
+      [attribute]: value
+    };
+    setDocumentList(newList);
   };
 
 
@@ -82,7 +92,7 @@ useEffect(()=> {
             setFeatureListLength,
             setFeatureList,
             featureListLength,
-            handleInputChange,
+            handleFeatureChange,
             handleAddFeatureImage,
             amenitiesList,
             amenityListLength,

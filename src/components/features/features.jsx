@@ -14,7 +14,7 @@ const Features = ({ name, price, address, featuresName, featureImage, amenities,
     const {featureList,
       featureListLength,
       setFeatureListLength,
-      handleInputChange,
+      handleFeatureChange,
       handleAddFeatureImage,
       amenitiesList,
       handleAddAmenity,
@@ -79,10 +79,10 @@ const {propertyLocation, propertyPrice,propertyTitle} = usePropertyContext()
         key={index}>
           <input className="feature-input"
           placeholder="enter feature"
-          onChange={(e) => handleInputChange(index, e.target.value)} 
+          onChange={(e) => handleFeatureChange(index, 'name', e.target.value)} 
           ></input>
           <ImageUploader
-          setterFunction={handleAddFeatureImage}
+    // setterFunction={}
           isFeatureImage={true}
         className='image-uploader no-padding'
           arrayIndex={index}

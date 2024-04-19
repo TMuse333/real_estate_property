@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import { useEffect } from "react";
+import { useAppContext } from "../../context/context";
 import { useDocumentContext } from "../../context/documentContext";
 import img from '../../media/place-holder.jpg';
 import ImageUploader from "../imageUploader/imageUploader";
@@ -82,7 +84,8 @@ console.log('top',top)
                     </input>
                     <ImageUploader
                     isDocumentImage={true}
-                    arrayIndex={index}/>
+                    arrayIndex={index}
+                    />
                     <input  onChange={(e)=>handleDocumentChange(index,'description',e.target.value)}
                     placeholder='Enter Description of Document Here'
                     >
@@ -120,20 +123,27 @@ console.log('top',top)
             </p>
 
             <div className="documents-grid">
-                {documentList.map((document, index) => (
-                    <div className="document"
-                    key={index}
-                    onMouseEnter={()=>handleDocHover(index)}
-                    onMouseLeave={()=>handleMouseLeave()}
-                    style={docStyle(index)}>
-                        <div>
-                         
-                        <img src={document.image}/>
-                        <p>{document.name}</p>
-                        </div>
-    
-                        </div>
-                ))}
+
+                {documentList.length > 0 && (
+<>
+{documentList.map((document, index) => (
+    <div className="document"
+    key={index}
+    onMouseEnter={()=>handleDocHover(index)}
+    onMouseLeave={()=>handleMouseLeave()}
+    style={docStyle(index)}>
+        <div>
+         
+        <img src={document.image}/>
+        <p>{document.name}</p>
+        </div>
+
+        </div>
+     
+))}
+   </>
+                )}
+               
             </div>
         </section>
 
