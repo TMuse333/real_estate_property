@@ -13,11 +13,21 @@ export const AppProvider = ({ children, numberOfCarousels }) => {
   const [createPageClicked, setCreatePageClicked] = useState(false);
   const [inputVariant, setInputVariant] = useState(true)
 
+  const [sectionListLength, setSectionListLength] = useState(0)
+
+  function handleAddSectionClick () {
+    setSectionListLength((prevLength) => prevLength + 1)
+    console.log('add a new section!')
+  }
+
   const value = {
     createPageClicked,
     setCreatePageClicked,
     inputVariant,
-    setInputVariant
+    setInputVariant,
+    handleAddSectionClick,
+    sectionListLength,
+    setSectionListLength
   }
 
   return (

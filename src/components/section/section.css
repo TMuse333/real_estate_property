@@ -1,0 +1,12 @@
+.section-container{
+    width:100vw;
+    background-color: grey;
+    margin-bottom: 5rem;
+    height:40vh;
+    transition: border 0.3s ease-in;;
+}
+
+.section-container:hover{
+    border:2px solid #00bfff;
+    transition: border 0.3s ease-in;;
+}

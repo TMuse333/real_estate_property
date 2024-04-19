@@ -1,31 +1,14 @@
 import react, {useState, useEffect} from 'react'
+import { useAppContext } from '../../context/context'
 import './propertyControls.css'
-
-
-const AddBlock = ({showMenu}) => {
-
-
-
-    return (
-        <>
-        <ul 
-        className='add-items-list'>
-            <li>Add Title</li>
-            <li>Add description</li>
-            <li>Add Single Image</li>
-            <li>Add single Video</li>
-        </ul>
-        </>
-    )
-}
-
-
 
 
 const PropertyControls = () => {
 
     const [showMenu, setShowMenu] = useState(false)
     const [showAddItemMenu, setShowItemMenu] = useState(false)
+
+    const {handleAddSectionClick} = useAppContext()
 
     const menuStyle = {
         transform: !showMenu ? 'translateX(100%)' : 'translateX(0)'
@@ -47,7 +30,10 @@ const PropertyControls = () => {
             </button>
         <section style={menuStyle}
         className='property-controls-container'>
-          
+          <button onClick={handleAddSectionClick}
+          >
+            Add Section
+          </button>
             
 
         </section>
