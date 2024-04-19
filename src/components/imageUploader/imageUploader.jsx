@@ -10,7 +10,7 @@ import { useDocumentContext } from '../../context/documentContext';
 
 const ImageUploader = ({ multiple, inputName, setterFunction, isProfileImage,
 isFeatureImage ,isDocumentImage, 
-arrayIndex, className
+arrayIndex, className, video
 }) => {
 
   //to make the code simpler i will have to add a general prop
@@ -126,7 +126,10 @@ arrayIndex, className
       handleDocumentChange(arrayIndex,'image',droppedImages[droppedImages.length-1])
     }
 
-    else if(setterFunction && !firstImageDropped){
+    else if(setterFunction
+       && droppedImages.length < 2 
+       )
+       {
       setterFunction(droppedImages[0])
       setFirstImageDropped(true)
     }
@@ -147,29 +150,40 @@ arrayIndex, className
   return (
     <>
       <div className={className || 'image-uploader'} onDragOver={handleDragOver} onDrop={handleDrop} style={style}>
-        {droppedImages.length > 0 ? (
-          // Render the first dropped image if multiple is not true
-          !multiple ? (
-          
-              <img src={droppedImages[0]} alt="Single dropped image" />
-    
+      {droppedImages.length > 0 ? (
+  // Render the first dropped image if multiple is not true
+  !multiple ? (
+    video ? (
+      <video src={droppedImages[0]} alt="Single dropped video" controls
+      autoPlay={false}
+      className={className} />
+    ) : (
+      <img src={droppedImages[0]} alt="Single dropped image" />
+    )
+  ) : (
+    // Render all dropped images if multiple is true
+    <>
+      {droppedImages.map((imageURL, index) => (
+        <div key={index} className="image-preview">
+          {video ? (
+            <video src={imageURL} className={className}
+             alt={`Dropped video ${index + 1}`} controls />
           ) : (
-            // Render all dropped images if multiple is true
-            <>
-              {droppedImages.map((imageURL, index) => (
-                <div key={index} className="image-preview">
-                  <img src={imageURL} alt={`Dropped ${index + 1}`} />
-                </div>
-              ))}
-            </>
-          )
-        ) : (
-          // Render the file input if no image is uploaded
-          <>
-            <p>Drag and drop images here or click to upload {inputName}</p>
-            <input type="file" accept="image/*" multiple={multiple} onChange={handleFileInputChange} />
-          </>
-        )}
+            <img src={imageURL} className={className}
+             alt={`Dropped image ${index + 1}`} />
+          )}
+        </div>
+      ))}
+    </>
+  )
+) : (
+  // Render the file input if no image is uploaded
+  <>
+    <p>Drag and drop {video ? 'videos' : 'images'} here or click to upload {inputName}</p>
+    <input type="file" accept={video ? 'video/*' : 'image/*'} multiple={multiple} onChange={handleFileInputChange} />
+  </>
+)}
+
       </div>
     </>
   );

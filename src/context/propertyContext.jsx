@@ -15,6 +15,9 @@ export const PropertyProvider = ({ children }) => {
     const [propertyDescription2, setPropertyDescription2] = useState('')
     const [propertyTitle3, setPropertyTitle3] = useState('')
     const [propertyDescription3, setPropertyDescription3] = useState('')
+    const [propertyVideo1, setPropertyVideo1] = useState(null)
+
+    const [descriptions, setDescriptions] = useState([])
 
 
     const handleInputChange = (value, setterFunction) => {
@@ -45,7 +48,11 @@ export const PropertyProvider = ({ children }) => {
         setPropertyTitle3,
         propertyDescription3,
         setPropertyDescription3,
-        handleInputChange
+        handleInputChange,
+        propertyVideo1,
+        setPropertyVideo1,
+        descriptions,
+        setDescriptions
       };
       
 

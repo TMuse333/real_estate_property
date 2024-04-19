@@ -11,6 +11,9 @@ export const ProfileProvider = ({ children }) => {
   const [profileEmail, setProfileEmail] = useState(null);
   const [profilePhoneNumber, setProfilePhoneNumber] = useState(null);
 
+
+  
+
   const contextValue = {
     profileImage,
     setProfileImage,

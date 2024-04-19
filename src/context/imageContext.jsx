@@ -17,6 +17,10 @@ export const ImageProvider = ({children, numberOfCarousels}) => {
     },[droppedImages])
 
 
+    useEffect(()=> {
+        console.log('property herobaner',
+        propertyHerobanner)
+    },[propertyHerobanner])
 
     const [createPageClicked, setCreatePageClicked] = useState(false)
 

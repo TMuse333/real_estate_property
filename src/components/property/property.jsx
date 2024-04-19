@@ -59,7 +59,9 @@ const Property = ({
         setPropertyTitle3,
         propertyDescription3,
         setPropertyDescription3,
-        handleInputChange
+        handleInputChange,
+        propertyVideo1,
+        setPropertyVideo1
       } = usePropertyContext() 
 
     const {createPageClicked, setCreatePageClicked,
@@ -96,7 +98,7 @@ const {setPropertyHerobanner, propertyHerobanner } = useImageContext()
 
        
             <img className="property-hero"
-            src={propertyHerobanner || img}
+            src={propertyHerobanner}
             />
  <h2><strong>For Sale:</strong> {propertyPrice || '1,000,000$'}</h2>
 
@@ -120,10 +122,9 @@ const {setPropertyHerobanner, propertyHerobanner } = useImageContext()
 
                  <h1>Video</h1>
 
-                 <img className="property-video"
-                  src={ propertyVideo || img}
-                  id='video'
-                 />
+            <video className="property-video" controls autoPlay={false}>
+                <source src={propertyVideo1} type='video/mp4'/>
+            </video>
 
                  <div className="property-images-grid">
                     <img src={img}/>
@@ -271,7 +272,10 @@ onChange={(e)=>handleInputChange(e.target.value,setPropertyClosingDate)}
           id='video'
          /> */}
 
-         <ImageUploader/>
+         <ImageUploader
+         video={true}
+         className='property-video'
+         setterFunction={setPropertyVideo1}/>
 
          <div className="property-images-grid">
          <ImageUploader/>
