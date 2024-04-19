@@ -378,8 +378,9 @@ onChange={(event)=>handleInputChange(event, setProfilePosition)}>
                 </div>
 
                 <ImageUploader
-                isProfileImage={true}/>
-               
+                isProfileImage={true}
+                className='profile-image-uploader'/>
+            
 
               <div className="profile-contacts input-name">
 

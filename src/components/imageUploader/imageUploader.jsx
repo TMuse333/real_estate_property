@@ -10,7 +10,7 @@ import { useDocumentContext } from '../../context/documentContext';
 
 const ImageUploader = ({ multiple, inputName, setterFunction, isProfileImage,
 isFeatureImage ,isDocumentImage, 
-arrayIndex
+arrayIndex, className
 }) => {
 
   //to make the code simpler i will have to add a general prop
@@ -147,7 +147,7 @@ arrayIndex
     <>
 
     {/* For multiple images  */}
-      <div className={uploaderClassName} onDragOver={handleDragOver} onDrop={handleDrop}
+      <div className={className || 'image-uploader'} onDragOver={handleDragOver} onDrop={handleDrop}
       style={style}>
         {multiple ? (
           <>

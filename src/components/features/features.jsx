@@ -84,7 +84,7 @@ const {propertyLocation, propertyPrice,propertyTitle} = usePropertyContext()
           <ImageUploader
           setterFunction={handleAddFeatureImage}
           isFeatureImage={true}
-        
+        className='image-uploader no-padding'
           arrayIndex={index}
           // multiple={true}
           />
