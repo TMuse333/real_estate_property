@@ -9,7 +9,7 @@ import { ImageProvider } from './context/imageContext';
 import { AppProvider } from './context/context';
 import Features from './components/features/features';
 import Documents from './components/documents/documents';
-
+import CreateProperty from './components/createProperty/createProperty';
 
 function App() {
 
@@ -31,12 +31,13 @@ function App() {
 
      
       <Routes>
-        <Route path="/" element={<Property />} />
+        <Route path="/" element={<Property
+        inputVariant={true} />} />
         {/* <Route path="/property" element={<Property />} /> */}
      
        <Route path='create-property'
-       element={<Property
-       inputVariant={true}/>}>
+       element={<CreateProperty
+       />}>
 
        </Route>
 

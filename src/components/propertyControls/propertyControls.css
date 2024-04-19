@@ -1,0 +1,52 @@
+.property-controls-container{
+    background-color: grey;
+    position: fixed;
+    top:0;
+    right:0;
+    width:40vw;
+    height:80vh;
+    transition: transform 0.3s ease-out;
+    background-color: rgba(128, 128, 128, 0.75); 
+}
+
+.property-control-buttons{
+  display: flex;
+  width:100%;
+justify-content: space-between;
+align-items: center;
+position: absolute;
+top:10%;
+/* background-color: red; */
+/* height:10vh; */
+
+  
+}
+
+.add-items-list{
+    list-style: none;
+    text-align: center;
+    margin-right: auto;
+    width:100%;
+    background-color: black;
+    padding:0.5rem;
+   
+
+
+}
+
+.add-items-list li{
+    margin-bottom: 1rem;
+}
+
+.property-control-buttons button{
+    padding:0.5rem;
+
+}
+
+.toggle-menu-button{
+    position: fixed;
+    top:0%;
+    right:0%;
+    z-index: 3;
+}
+
